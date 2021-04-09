@@ -1,0 +1,13 @@
+
+:root {
+    --NavbarColor: #D4D7FF;
+    --Navbarlinks : #2F4179 ;
+    --black: #000;
+  }
+
+  .webNavbar{
+    background-color: var(--NavbarColor);
+}
+.NavbarLinks{
+    color: var(--Navbarlinks) !important;
+}
