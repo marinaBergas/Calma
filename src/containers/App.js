@@ -28,24 +28,12 @@ function App() {
             <Route path="/blogs" component={Blogs}/>
             <Route path="/about" component={Header}/>
             <Route path="/doctors" component={Doctors}/>
-<<<<<<< HEAD
             <Route path="/register/signup" component={SignUp}/>
             <Route path="/register/signin" component={Signin}/>
-          </Switch>
-          <Footer/>
-=======
-            <Route path="/register" component={Register}/>
             <Route path="/dashboard" exact component={Sidebar}/>
           </Switch>
           
       </Router>
-      <Router>
-            <switch>
-              <Route path="/dashboard/Schedule" component={Schedule}/>
-            </switch>
->>>>>>> dashboard
-      </Router>
-
     </div>
   );
 }
