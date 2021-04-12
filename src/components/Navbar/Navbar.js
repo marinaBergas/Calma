@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../Assets/Images/Free_Sample_By_Wix.jpg';
+import Logo from '../../Assets/Images/CALMA-logo.png';
 import './Navbar.css'
 import {
   Collapse,
@@ -26,9 +26,11 @@ const WebNavbar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Container  className=" webNavbar " fluid={true}>
-      <Navbar  light expand="md"  className=" webNavbar " >
-        <NavbarBrand > <img src={Logo}  alt="Logo" style={{height:"50px"}} /> </NavbarBrand>
+    <Container  className=" webNavbar " fluid={true} >
+      <Navbar  dark  expand="md"  className=" webNavbar " fixed="top" >
+        <NavbarBrand  to="/" tag={Link}>
+           <img src={Logo}  alt="Logo" style={{height:"35px"}} /> 
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
@@ -36,7 +38,7 @@ const WebNavbar = (props) => {
             <NavLink  to="/" tag={Link} className=" NavbarLinks px-3">Home</NavLink>
             </NavItem>
             <NavItem>
-              {/* < NavLink ctiveClassName="active" >About us </ NavLink> */}
+            <NavLink  to="/about" tag={Link} className=" NavbarLinks px-3">About us</NavLink>
             </NavItem>
             <NavItem>
               < NavLink to="/blogs"  tag={Link}  className=" NavbarLinks px-3" >Blogs</ NavLink>
@@ -45,19 +47,21 @@ const WebNavbar = (props) => {
             < NavLink to="/doctors" tag={Link}  className=" NavbarLinks px-3" >Doctors</ NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle nav caret className=" NavbarLinks px-3">
                 Register
               </DropdownToggle>
               <DropdownMenu right>
-               < NavLink to="/register" tag={Link} className=" NavbarLinks px-3">
-                  <DropdownItem>
-                    Sign up
+               < NavLink to="/register" tag={Link} >
+                  <DropdownItem className=" NavbarLinks px-3">
+                  Sign up
                    </DropdownItem>
                 </NavLink>
                 <DropdownItem divider />
-                < NavLink to="/register"  tag={Link} className=" NavbarLinks px-3"><DropdownItem>
+                < NavLink to="/register"  tag={Link} >
+                  <DropdownItem className=" NavbarLinks px-3">
                   Log in
-                </DropdownItem></NavLink> 
+                </DropdownItem>
+                </NavLink> 
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

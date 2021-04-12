@@ -1,11 +1,21 @@
 import React from 'react'
-import Header from './Header'
+import Header from './Header/Header'
+import { Container, Row, Col } from 'reactstrap';
+import Footer from '../Footer/Footer';
+import WebNavbar from '../Navbar/Navbar';
+
 
 function Home() {
     return (
-        <div>
-            <Header/>
-        </div>
+        <Container fluid={true}>
+        <Row>
+          <Col className="px-0" >
+             <Header/>
+          </Col>
+        </Row>
+        <Row>
+        </Row>
+      </Container>
     )
 }
 
