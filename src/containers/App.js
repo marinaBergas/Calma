@@ -6,6 +6,8 @@ import Home from '../components/Home/Home';
 import Blogs from '../components/Blogs/Blogs';
 import Doctors from '../components/Doctors/Doctors';
 import Register from '../components/Register/Register';
+import Header from '../components/Home/Header/Header';
+import Footer from '../components/Footer/Footer';
 
 
 function App() {
@@ -17,11 +19,13 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/blogs" component={Blogs}/>
+            <Route path="/about" component={Header}/>
             <Route path="/doctors" component={Doctors}/>
             <Route path="/register" component={Register}/>
           </Switch>
+          <Footer/>
       </Router>
-    
+      
     </div>
   );
 }

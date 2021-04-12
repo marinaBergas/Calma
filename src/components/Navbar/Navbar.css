@@ -6,7 +6,7 @@
   }
 
   .webNavbar{
-    background-color: var(--NavbarColor);
+   background-image: linear-gradient(to right, rgba(136, 171, 204, 0.2), rgba(92, 159, 210,0.2));
 }
 .NavbarLinks{
     color: var(--Navbarlinks) !important;
