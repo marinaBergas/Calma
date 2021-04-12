@@ -6,9 +6,14 @@ import Home from '../components/Home/Home';
 import Blogs from '../components/Blogs/Blogs';
 import Doctors from '../components/Doctors/Doctors';
 import Register from '../components/Register/Register';
+
 import Header from '../components/Home/Header/Header';
 import Footer from '../components/Footer/Footer';
 
+
+
+import Signin from '../components/Form/Signin/Signin';
+import SignUp from '../components/Form/SignUp/SignUp';
 
 function App() {
 
@@ -21,11 +26,12 @@ function App() {
             <Route path="/blogs" component={Blogs}/>
             <Route path="/about" component={Header}/>
             <Route path="/doctors" component={Doctors}/>
-            <Route path="/register" component={Register}/>
+            <Route path="/register/signup" component={SignUp}/>
+            <Route path="/register/signin" component={Signin}/>
           </Switch>
           <Footer/>
       </Router>
-      
+
     </div>
   );
 }

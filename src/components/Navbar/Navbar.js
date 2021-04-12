@@ -51,15 +51,15 @@ const WebNavbar = (props) => {
                 Register
               </DropdownToggle>
               <DropdownMenu right>
-               < NavLink to="/register" tag={Link} >
+               < NavLink to="/register/signup" tag={Link} >
                   <DropdownItem className=" NavbarLinks px-3">
-                  Sign up
+                  Sign Up
                    </DropdownItem>
                 </NavLink>
                 <DropdownItem divider />
-                < NavLink to="/register"  tag={Link} >
+                < NavLink to="/register/signin"  tag={Link} >
                   <DropdownItem className=" NavbarLinks px-3">
-                  Log in
+                  Sign In
                 </DropdownItem>
                 </NavLink> 
               </DropdownMenu>
