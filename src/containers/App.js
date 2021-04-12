@@ -6,6 +6,8 @@ import Home from '../components/Home/Home';
 import Blogs from '../components/Blogs/Blogs';
 import Doctors from '../components/Doctors/Doctors';
 import Register from '../components/Register/Register';
+import Sidebar from '../components/Dashboard/Sidebar';
+import Schedule from '../components/Dashboard/Schedule';
 
 
 function App() {
@@ -19,7 +21,14 @@ function App() {
             <Route path="/blogs" component={Blogs}/>
             <Route path="/doctors" component={Doctors}/>
             <Route path="/register" component={Register}/>
+            <Route path="/dashboard" exact component={Sidebar}/>
           </Switch>
+          
+      </Router>
+      <Router>
+            <switch>
+              <Route path="/dashboard/Schedule" component={Schedule}/>
+            </switch>
       </Router>
     
     </div>

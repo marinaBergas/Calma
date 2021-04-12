@@ -44,6 +44,9 @@ const WebNavbar = (props) => {
             <NavItem>
             < NavLink to="/doctors" tag={Link}  className=" NavbarLinks px-3" >Doctors</ NavLink>
             </NavItem>
+            <NavItem>
+            < NavLink to="/dashboard" tag={Link}  className=" NavbarLinks px-3" >Dashboard</ NavLink>
+            </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Register

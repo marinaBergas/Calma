@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Blogs() {
+function Schedule() {
     return (
         <div>
-            <h1>Blogs</h1> 
+            kkkkkkk
         </div>
     )
 }
 
-export default Blogs
+export default Schedule
