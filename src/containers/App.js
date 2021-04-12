@@ -6,6 +6,8 @@ import Home from '../components/Home/Home';
 import Blogs from '../components/Blogs/Blogs';
 import Doctors from '../components/Doctors/Doctors';
 import Register from '../components/Register/Register';
+import Sidebar from '../components/Dashboard/Sidebar';
+import Schedule from '../components/Dashboard/Schedule';
 
 import Header from '../components/Home/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -28,10 +30,10 @@ function App() {
             <Route path="/doctors" component={Doctors}/>
             <Route path="/register/signup" component={SignUp}/>
             <Route path="/register/signin" component={Signin}/>
+            <Route path="/dashboard" exact component={Sidebar}/>
           </Switch>
-          <Footer/>
+          
       </Router>
-
     </div>
   );
 }
