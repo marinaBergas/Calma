@@ -1,0 +1,14 @@
+
+.container
+{
+    width:40%;
+    margin:auto;
+    background-color: #fff;
+    
+}
+form{
+    
+    flex-direction: column;
+
+    justify-content:center ;
+}

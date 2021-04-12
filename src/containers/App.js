@@ -6,8 +6,8 @@ import Home from '../components/Home/Home';
 import Blogs from '../components/Blogs/Blogs';
 import Doctors from '../components/Doctors/Doctors';
 import Register from '../components/Register/Register';
-
-
+import Signin from '../components/Form/Signin/Signin';
+import SignUp from '../components/Form/SignUp/SignUp';
 function App() {
 
   return (
@@ -21,7 +21,8 @@ function App() {
             <Route path="/register" component={Register}/>
           </Switch>
       </Router>
-    
+      <Signin/>
+    <SignUp />
     </div>
   );
 }
