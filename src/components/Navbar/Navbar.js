@@ -17,15 +17,19 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
+import { auth } from '../../firebase/utils';
+import {connect} from 'react-redux';
 
 
 
 const WebNavbar = (props) => {
+  const {currentUser} = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
+   
     <Container  className=" webNavbar " fluid={true} >
       <Navbar  dark  expand="md"  className=" webNavbar " fixed="top" >
         <NavbarBrand  to="/" tag={Link}>
@@ -50,10 +54,16 @@ const WebNavbar = (props) => {
             < NavLink to="/dashboard" tag={Link}  className=" NavbarLinks px-3" >Dashboard</ NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret className=" NavbarLinks px-3">
+            {currentUser && [ 
+              <DropdownToggle key={1} nav caret className=" NavbarLinks px-3" onClick={()=>(auth.signOut())}>
+                Log Out
+              </DropdownToggle>]}
+
+            {!currentUser&&[ 
+              <DropdownToggle key={1} nav caret className=" NavbarLinks px-3">
                 Register
-              </DropdownToggle>
-              <DropdownMenu right>
+              </DropdownToggle>,
+              <DropdownMenu key={2} right>
                < NavLink to="/register/signup" tag={Link} >
                   <DropdownItem className=" NavbarLinks px-3">
                   Sign Up
@@ -65,13 +75,22 @@ const WebNavbar = (props) => {
                   Sign In
                 </DropdownItem>
                 </NavLink> 
-              </DropdownMenu>
+              </DropdownMenu>]}
+            
             </UncontrolledDropdown>
           </Nav>
         </Collapse>
       </Navbar>
       </Container>
   );
-}
 
-export default WebNavbar;
+  
+}
+WebNavbar.defaultProps = {
+  currentUser : null
+};
+const mapStateToProps = ({user}) => ({
+  currentUser:user.currentUser
+});
+
+export default connect(mapStateToProps,null) (WebNavbar);

@@ -16,15 +16,38 @@ import Signin from '../components/Form/Signin/Signin';
 import SignUp from '../components/Form/SignUp/SignUp';
 import Messages from '../components/Dashboard/Messages';
 import Patients from '../components/Dashboard/Patients';
+import { auth, handleUserProfile } from '../firebase/utils';
+import { useEffect, useState } from 'react';
+import {setCurrentUser} from '../redux/User/User.action';
+import {connect} from 'react-redux'
 
-function App() {
+//const authListener=null;
+const App=props => {
+  const {currentUser , setCurrentUser} = props
+//  const [authListener, setauthListener] = useState(initialState)
+ useEffect((starus) => {
+  
+  const authListener = auth.onAuthStateChanged(async userAuth =>{
+    if(userAuth)  {
+      const userRef = await handleUserProfile(userAuth);
+      userRef.onSnapshot(snapshot=>{
+        setCurrentUser({
+          id : snapshot.id,
+          ...snapshot.data()
+        })
+      })
+    }
+    setCurrentUser (userAuth)
+  })
+ },[])
 
   return (
+
     <div className="App">
       <Router>
         <WebNavbar/>
           <Switch>
-            <Route path="/" exact component={Home}/>
+            <Route path="/" exact component={Home} />
             <Route path="/blogs" component={Blogs}/>
             <Route path="/about" component={Header}/>
             <Route path="/doctors" component={Doctors}/>
@@ -36,10 +59,15 @@ function App() {
             <Route path="/dashboard/Patients" exact component={Patients}/>
 
           </Switch>
-          
+          <Footer/>
       </Router>
     </div>
   );
 }
-
-export default App;
+const mapStateToProps = ({user})=>({
+   currentUser:user.currentUser
+});
+const mapDispatchToProps =dispatch=>({
+  setCurrentUser :user => dispatch(setCurrentUser(user))
+});
+export default connect(mapStateToProps,mapDispatchToProps)(App);
