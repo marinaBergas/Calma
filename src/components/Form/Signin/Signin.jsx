@@ -1,7 +1,14 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import image from "../../../Assets/Images/calm.jpg";
+import { signInWithGoogle } from "../../../firebase/utils";
+
 import "./Signin.css";
+
+const handleSubmit = async e =>{
+  e.preventDefault()
+}
+
 
 const Signin = () => {
   return (
@@ -9,7 +16,7 @@ const Signin = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="signin-form col-md-6 col-12">
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <h1 className="my-5">Sign In</h1>
               <FormGroup>
                 <Input
@@ -28,6 +35,7 @@ const Signin = () => {
                 />
               </FormGroup>
               <Button type="submit" className="mb-3">Submit</Button>
+              <Button className="btn" onClick={signInWithGoogle}>sign in with google</Button>
             </Form>
           </div>
           <div className=" px-0 col-md-6 col-12">

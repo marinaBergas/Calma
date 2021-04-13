@@ -16,26 +16,55 @@ import Footer from '../components/Footer/Footer';
 
 import Signin from '../components/Form/Signin/Signin';
 import SignUp from '../components/Form/SignUp/SignUp';
+import { auth, handleUserProfile } from '../firebase/utils';
+import { useEffect, useState } from 'react';
+import {setCurrentUser} from '../redux/User/User.action';
+import {connect} from 'react-redux'
 
-function App() {
+//const authListener=null;
+const App=props => {
+  const {currentUser , setCurrentUser} = props
+//  const [authListener, setauthListener] = useState(initialState)
+ useEffect((starus) => {
+  
+  const authListener = auth.onAuthStateChanged(async userAuth =>{
+    if(userAuth)  {
+      const userRef = await handleUserProfile(userAuth);
+      userRef.onSnapshot(snapshot=>{
+        setCurrentUser({
+          id : snapshot.id,
+          ...snapshot.data()
+        })
+      })
+    }
+    setCurrentUser (userAuth)
+  })
+ },[])
 
   return (
+
     <div className="App">
       <Router>
         <WebNavbar/>
           <Switch>
-            <Route path="/" exact component={Home}/>
+            <Route path="/" exact component={Home} />
             <Route path="/blogs" component={Blogs}/>
             <Route path="/about" component={Header}/>
             <Route path="/doctors" component={Doctors}/>
             <Route path="/register/signup" component={SignUp}/>
             <Route path="/register/signin" component={Signin}/>
             <Route path="/dashboard" exact component={Sidebar}/>
+
           </Switch>
           
       </Router>
     </div>
   );
 }
-
-export default App;
+const mapStateToProps = ({user})=>({
+   currentUser:user.currentUser
+});
+const mapDispatchToProps =dispatch=>({
+  setCurrentUser :user => dispatch(setCurrentUser(user))
+});
+export default connect(mapStateToProps,mapDispatchToProps)(App);
