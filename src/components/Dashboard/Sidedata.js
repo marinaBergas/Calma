@@ -9,26 +9,31 @@ export const Sidedata = [
     {
         title:"Dashboard",
         icon:<DashboardIcon/>,
-        link:"/Dashboard"
+        link:"/Dashboard",
+        cName: 'nav-text'
     },
     {
         title:"Schedule",
         icon:<CalendarTodayIcon/>,
-        link:"/dashboard/Schedule"
+        link:"/dashboard/Schedule",
+        cName: 'nav-text'
     },
     {
         title:"Patients",
         icon:<PersonIcon/>,
-        link:"/Patients"
+        link:"/dashboard/Patients",
+        cName: 'nav-text'
     },
     {
         title:"Messages",
         icon:<MessageIcon/>,
-        link:"/Messages"
+        link:"/dashboard/Messages",
+        cName: 'nav-text'
     },
     {
         title:"Logout",
         icon:<ExitToAppIcon/>,
-        link:"/Login"
+        link:"/register/signin",
+        cName: 'nav-text'
     },
 ]

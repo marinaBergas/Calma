@@ -1,15 +1,15 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 
-function Schedule() {
+function Messages() {
     return (
         <>
         <Sidebar/>
         <div>
-            Patients
+            Messages
         </div>
         </>
     )
 }
 
-export default Schedule
+export default Messages
