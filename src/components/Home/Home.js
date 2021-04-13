@@ -5,12 +5,12 @@ import Footer from '../Footer/Footer';
 import WebNavbar from '../Navbar/Navbar';
 
 
-function Home() {
+function Home(props) {
     return (
         <Container fluid={true}>
         <Row>
           <Col className="px-0" >
-             <Header/>
+             <Header {...props}/>
           </Col>
         </Row>
         <Row>
