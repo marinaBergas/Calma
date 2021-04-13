@@ -54,10 +54,10 @@ const WebNavbar = (props) => {
             < NavLink to="/dashboard" tag={Link}  className=" NavbarLinks px-3" >Dashboard</ NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-            {currentUser&&(
-              <NavLink tag={Link} nav caret className=" NavbarLinks px-3" onClick={()=>(auth.signOut())}>
+            {currentUser && [ 
+              <DropdownToggle key={1} nav caret className=" NavbarLinks px-3" onClick={()=>(auth.signOut())}>
                 Log Out
-              </NavLink>)}
+              </DropdownToggle>]}
 
             {!currentUser&&[ 
               <DropdownToggle key={1} nav caret className=" NavbarLinks px-3">

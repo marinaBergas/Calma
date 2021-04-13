@@ -54,9 +54,8 @@ const App=props => {
             <Route path="/register/signup" component={SignUp}/>
             <Route path="/register/signin" component={Signin}/>
             <Route path="/dashboard" exact component={Sidebar}/>
-
           </Switch>
-          
+          <Footer/>
       </Router>
     </div>
   );
