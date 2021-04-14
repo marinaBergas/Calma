@@ -19,11 +19,14 @@ import Patients from '../components/Dashboard/Patients';
 import { auth, handleUserProfile } from '../firebase/utils';
 import { useEffect, useState } from 'react';
 import {setCurrentUser} from '../redux/User/User.action';
-import {connect} from 'react-redux'
+import {connect, useDispatch} from 'react-redux'
+import Admin from '../components/Admin/Admin';
 
 //const authListener=null;
 const App=props => {
-  const {currentUser , setCurrentUser} = props
+  const dispatsh = useDispatch();
+
+
 //  const [authListener, setauthListener] = useState(initialState)
  useEffect((starus) => {
   
@@ -31,13 +34,13 @@ const App=props => {
     if(userAuth)  {
       const userRef = await handleUserProfile(userAuth);
       userRef.onSnapshot(snapshot=>{
-        setCurrentUser({
+        dispatsh(setCurrentUser({
           id : snapshot.id,
           ...snapshot.data()
-        })
+        }))
       })
     }
-    setCurrentUser (userAuth)
+    dispatsh(setCurrentUser (userAuth))
   })
  },[])
 
@@ -57,17 +60,12 @@ const App=props => {
             <Route path="/dashboard/Schedule" exact component={Schedule}/>
             <Route path="/dashboard/Messages" exact component={Messages}/>
             <Route path="/dashboard/Patients" exact component={Patients}/>
-
+            <Route path="/admin" exact component={Admin}/>
           </Switch>
           <Footer/>
       </Router>
     </div>
   );
 }
-const mapStateToProps = ({user})=>({
-   currentUser:user.currentUser
-});
-const mapDispatchToProps =dispatch=>({
-  setCurrentUser :user => dispatch(setCurrentUser(user))
-});
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+
+export default App;

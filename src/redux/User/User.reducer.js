@@ -1,7 +1,10 @@
 import userType from "./User.type"
 
 const INITIAL_STATE = {
-    currentUser : null 
+    currentUser : null ,
+    signInSuccess : false,
+    signUPSuccess : false,
+    signInWithGoogle : null
 }
 
 const userReducer  = (state=INITIAL_STATE,action)=>{
@@ -10,7 +13,28 @@ const userReducer  = (state=INITIAL_STATE,action)=>{
             return {
                 ...state , currentUser : action.payload
             }
-            return
+            
+        case userType.SIGN_IN_SUCCESS:    
+        return {
+            ...state , signInSuccess : action.payload
+        }
+        case userType.SIGN_UP_SUCCESS:    
+        return {
+            ...state , signUPSuccess : action.payload
+        }
+        case userType.SIGN_IN_WITH_GOOGLE:    
+        return {
+            ...state , signUPSuccess : action.payload
+        }
+        case userType.SIGN_OUT_SUCCESS:    
+        return {
+            ...state , 
+            currentUser : null ,
+            signInSuccess : false,
+            signUPSuccess : false,
+        }
+    
+    
         default :
         return state    
     }

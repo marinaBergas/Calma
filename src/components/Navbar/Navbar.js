@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import Logo from '../../Assets/Images/CALMA-logo.png';
 import './Navbar.css'
 import {
@@ -18,14 +18,28 @@ import {
   NavbarText
 } from 'reactstrap';
 import { auth } from '../../firebase/utils';
-import {connect} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLogOut } from '../../redux/User/User.action';
 
+
+const mapState = ({user}) => ({
+  currentUser:user.currentUser,
+  signout :user.signout
+});
 
 
 const WebNavbar = (props) => {
-  const {currentUser} = props;
+  const dispatch = useDispatch();
+  const {currentUser,signout} = useSelector(mapState);
+  const history = useHistory();
   const [isOpen, setIsOpen] = useState(false);
-
+  // useEffect(() => {
+  //   if (signout) {
+  //     history.push("/register/signin");
+  //   }else{
+  //     history.push("/");
+  //   }
+  // }, [signout]);
   const toggle = () => setIsOpen(!isOpen);
 
   return (
@@ -55,9 +69,12 @@ const WebNavbar = (props) => {
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
             {currentUser && [ 
-              <DropdownToggle key={1} nav caret className=" NavbarLinks px-3" onClick={()=>(auth.signOut())}>
+              <NavLink key={1} to="/"  tag={Link} className=" NavbarLinks px-3" onClick={()=>{
+                auth.signOut();
+                //dispatch(userLogOut(!signout))
+                }}>
                 Log Out
-              </DropdownToggle>]}
+              </NavLink>]}
 
             {!currentUser&&[ 
               <DropdownToggle key={1} nav caret className=" NavbarLinks px-3">
@@ -89,8 +106,5 @@ const WebNavbar = (props) => {
 WebNavbar.defaultProps = {
   currentUser : null
 };
-const mapStateToProps = ({user}) => ({
-  currentUser:user.currentUser
-});
 
-export default connect(mapStateToProps,null) (WebNavbar);
+export default WebNavbar;

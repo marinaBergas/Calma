@@ -1,5 +1,5 @@
 import React , {useState} from "react";
-import "./sidebar.css"
+import "./Sidebar.css"
 import { Sidedata } from "./Sidedata";
 import Logo from '../../Assets/Images/cl1.jpg';
 import { Link } from 'react-router-dom';
