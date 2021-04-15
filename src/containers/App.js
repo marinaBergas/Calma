@@ -12,10 +12,10 @@ import Schedule from '../components/Dashboard/Schedule';
 import Header from '../components/Home/Header/Header';
 import Footer from '../components/Footer/Footer';
 
-
-
 import Signin from '../components/Form/Signin/Signin';
 import SignUp from '../components/Form/SignUp/SignUp';
+import Messages from '../components/Dashboard/Messages';
+import Patients from '../components/Dashboard/Patients';
 import { auth, handleUserProfile } from '../firebase/utils';
 import { useEffect, useState } from 'react';
 import {setCurrentUser} from '../redux/User/User.action';
@@ -54,6 +54,10 @@ const App=props => {
             <Route path="/register/signup" component={SignUp}/>
             <Route path="/register/signin" component={Signin}/>
             <Route path="/dashboard" exact component={Sidebar}/>
+            <Route path="/dashboard/Schedule" exact component={Schedule}/>
+            <Route path="/dashboard/Messages" exact component={Messages}/>
+            <Route path="/dashboard/Patients" exact component={Patients}/>
+
           </Switch>
           <Footer/>
       </Router>
