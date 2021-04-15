@@ -1,12 +1,25 @@
+
 import React, { useState } from "react";
-import { Button, Form, FormGroup, Label, Input, ButtonGroup } from "reactstrap";
-// import image from "../../../Assets/Images/calm.jpg";
+
+import {useHistory,link} from 'react-router-dom'
+import React from "react";
+import { Button, Form, FormGroup, Label, Input,ButtonGroup } from "reactstrap";
+import image from "../../../Assets/Images/calm.jpg";
+
 import "./SignUp.css";
 import { FaUserMd } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import useForm from "./useForm";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { userSignOut } from '../../../redux/User/User.action';
+
+const mapState = ({user}) => ({
+  signUpSuccess:user.signUPSuccess 
+});
+
 const SignUp = () => {
-  const { handelChanges, handelSubmit, errors } = useForm();
+ 
   const [rSelected, setRSelected] = useState(1);
   const governorates = [
     { id: "1", governorate_name_ar: "القاهرة", governorate_name_en: "Cairo" },
@@ -93,6 +106,17 @@ const SignUp = () => {
     },
     { id: "27", governorate_name_ar: "سوهاج", governorate_name_en: "Sohag" },
   ];
+  
+  const {signUpSuccess} = useSelector(mapState);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  useEffect(() => {
+    if (signUpSuccess) {
+      history.push('/');
+    }
+  }, [signUpSuccess]);
+
+  const { handelChanges, handelSubmit, errors,values } = useForm();
   return (
     <div className="signup py-5">
       <div className="container-fluid">
@@ -138,8 +162,9 @@ const SignUp = () => {
                 <Label for="name">Name</Label>
                 <Input
                   type="name"
-                  name="name"
+                  name="displayName"
                   id="name"
+                  value={values.name}
                   placeholder="Enter Your Name"
                   onChange={handelChanges}
                 />
@@ -154,6 +179,7 @@ const SignUp = () => {
                 <Input
                   type="text"
                   name="email"
+                  value={values.email}
                   id="email"
                   placeholder="Enter Your Email"
                   onChange={handelChanges}
@@ -170,6 +196,7 @@ const SignUp = () => {
                 <Input
                   type="password"
                   name="password"
+                  value={values.password}
                   id="password"
                   placeholder="Enter Your Password"
                   onChange={handelChanges}
@@ -185,6 +212,7 @@ const SignUp = () => {
                 <Input
                   type="password"
                   name="confirmpassword"
+                  value={values.confirmpassword}
                   id="confirmpassword"
                   placeholder="Confirm Password"
                   onChange={handelChanges}

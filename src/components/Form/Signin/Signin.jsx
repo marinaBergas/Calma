@@ -1,14 +1,57 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-// import image from "../../../Assets/Images/header.jpg";
-import { signInWithGoogle } from "../../../firebase/utils";
-
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Button, Form, FormGroup, Input } from "reactstrap";
+import image from "../../../Assets/Images/calm.jpg";
+import {  useHistory } from 'react-router-dom';
 import "./Signin.css";
+import { useEffect } from "react";
+import {signInWithGoogle, userSignIn,userSignOut} from '../../../redux/User/User.action'
+const mapState = ({user}) => ({
+  currentUser:user.currentUser,
+  signInSuccess :user.signInSuccess,
+});
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-};
+
+>>>>>>> fetch-data
 const Signin = () => {
+  const {signInSuccess,currentUser} = useSelector(mapState);
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (signInSuccess) {
+      history.push("/");
+    }
+  }, [signInSuccess]);
+  
+ 
+   
+
+  const resetForm = () => {
+    setconfirmValues({});
+  };
+  const [confirmValues, setconfirmValues] = useState({
+    email: "",
+    password: "",
+  });
+  const handelChanges = (e) => {
+   setconfirmValues({ 
+      ...confirmValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+const handleSubmit =  e =>{
+  e.preventDefault();
+ const email =confirmValues.email;
+ const password = confirmValues.password;
+  dispatch(userSignIn({email,password}))
+}
+const handleSignInWithGoogle = ()=>{
+  dispatch(signInWithGoogle())
+}
+
   return (
     <div className="signin py-5">
       <div className="container-fluid">
@@ -23,6 +66,7 @@ const Signin = () => {
                   name="email"
                   id="email"
                   placeholder="Enter Your Email"
+                  onChange={handelChanges}
                 />
               </FormGroup>
               <FormGroup className="text-left">
@@ -32,14 +76,20 @@ const Signin = () => {
                   name="password"
                   id="password"
                   placeholder="Enter Your Password"
+                  onChange={handelChanges}
                 />
               </FormGroup>
+<<<<<<< HEAD
               <Button type="submit" className="mb-3">
                 Submit
               </Button>
               <Button className="btn" onClick={signInWithGoogle}>
                 sign in with google
               </Button>
+=======
+               <Button type="submit" className="mb-3"  >Submit</Button>
+              <Button className="btn" onClick={handleSignInWithGoogle}>sign in with google</Button>
+>>>>>>> fetch-data
             </Form>
           </div>
           {/* <div className=" px-0 col-md-6 col-12">
