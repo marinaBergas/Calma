@@ -21,7 +21,7 @@ const Validation = (values) => {
     errors.confirmpassword = "this field is required";
   } else if (values.confirmpassword.length < 8) {
     errors.confirmpassword = "password must be not less than 8";
-  } else if (!(values.password == values.confirmpassword)) {
+  } else if (!(values.password === values.confirmpassword)) {
     errors.confirmpassword = "password doesnot match";
   }
 

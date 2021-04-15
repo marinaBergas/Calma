@@ -195,7 +195,7 @@ const SignUp = () => {
                   </p>
                 )}
               </FormGroup>
-              {rSelected == 2 && (
+              {rSelected === 2 && (
                 <div>
                   <FormGroup className="text-left">
                     <Label for="exampleSelect">Governorates</Label>

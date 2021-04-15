@@ -4,7 +4,8 @@ import { Container, Row, Col } from 'reactstrap';
 function Header() {
     return (
         <Col className="px-0" media="(max-width: 400px)" >
-        <h1 className='header'></h1>
+        <h1 className='header'>Talk to your therapist online privately anytime anywhere !</h1>
+
        </Col>
     )
 }
