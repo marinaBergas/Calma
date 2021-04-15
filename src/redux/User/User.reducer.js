@@ -4,7 +4,6 @@ const INITIAL_STATE = {
     currentUser : null ,
     signInSuccess : false,
     signUPSuccess : false,
-    signInWithGoogle : null
 }
 
 const userReducer  = (state=INITIAL_STATE,action)=>{
@@ -22,10 +21,7 @@ const userReducer  = (state=INITIAL_STATE,action)=>{
         return {
             ...state , signUPSuccess : action.payload
         }
-        case userType.SIGN_IN_WITH_GOOGLE:    
-        return {
-            ...state , signUPSuccess : action.payload
-        }
+
         case userType.SIGN_OUT_SUCCESS:    
         return {
             ...state , 

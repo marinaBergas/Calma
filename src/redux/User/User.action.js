@@ -11,23 +11,23 @@ export const setCurrentUser = user =>({
 
 
   
-  export const signInWithGoogle = () => async dispatch =>{
+  export const signInWithGoogle = async dispatch =>{
    try{
     await auth.signInWithPopup(GoogleProvider)
     .then (()=>{
       dispatch({
-        type : userType.SIGN_IN_SUCCESS ,
-        payload : true
+      type : userType.SIGN_IN_SUCCESS ,
+      payload : true
     })
-     }
+   }
     )
-  } catch (err) {
-    //console.log(err)
+  } catch (err){
+  //console.log(err)
   }
   
-   };
+   }
     
-  
+
 export const userSignIn = ({email,password})=>async dispatch =>{
 try{
       await auth.signInWithEmailAndPassword(email,password);
@@ -49,7 +49,7 @@ export const userSignUp =({displayName,email,password,confirmPassword})=>async d
         payload : true
       })
      }catch{
-       alert('this email already signUp')
+       alert('this email sign already signUp')
      }
 };
 

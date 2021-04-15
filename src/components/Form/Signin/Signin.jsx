@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Button, Form, FormGroup, Input } from "reactstrap";
 import image from "../../../Assets/Images/calm.jpg";
-import { Link, useHistory } from 'react-router-dom';
+import {  useHistory } from 'react-router-dom';
 import "./Signin.css";
 import { useEffect } from "react";
 import {signInWithGoogle, userSignIn,userSignOut} from '../../../redux/User/User.action'
@@ -17,14 +17,16 @@ const Signin = () => {
   const {signInSuccess,currentUser} = useSelector(mapState);
   const history = useHistory();
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (signInSuccess) {
-      resetForm();
-      history.push("/dashboard");
-      dispatch(userSignOut());
+      history.push("/");
     }
   }, [signInSuccess]);
   
+ 
+   
+
   const resetForm = () => {
     setconfirmValues({});
   };

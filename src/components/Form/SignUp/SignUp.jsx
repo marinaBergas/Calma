@@ -19,7 +19,6 @@ const SignUp = () => {
   useEffect(() => {
     if (signUpSuccess) {
       history.push('/');
-      dispatch(userSignOut());
     }
   }, [signUpSuccess]);
 

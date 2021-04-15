@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import {firebaseConfig} from './config';
-import { useEffect, useState } from 'react';
+
 
 firebase.initializeApp(firebaseConfig)
 
@@ -26,9 +26,9 @@ export const handleUserProfile = async (userAuth,additionalData)=>{
         // else doesn't exist  so create a new user
         const {displayName,email,photoURL} = userAuth;
         const timesTamp = new Date();
-        const userRoles = ['user'];
+        //const userRoles = ['user'];
+        const userRoles = (email ==='mera.saber@yahoo.com')?['user','admin']:'user';
         try{
-
             await userRef.set({
                 displayName,
                 email,
@@ -44,5 +44,17 @@ export const handleUserProfile = async (userAuth,additionalData)=>{
   
     }
     return userRef;
+};
+
+export const checkUserIsAdmin = currentUser=>{
+  if(!currentUser||!Array.isArray(currentUser.userRoles)){
+    return false
+  }
+  const {userRoles}=currentUser
+  if(userRoles.includes('admin')){
+    return true
+  }else{
+    return false
+  }
 }
 

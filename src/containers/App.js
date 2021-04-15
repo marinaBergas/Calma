@@ -5,7 +5,6 @@ import {BrowserRouter as Router, Switch,Route } from 'react-router-dom';
 import Home from '../components/Home/Home';
 import Blogs from '../components/Blogs/Blogs';
 import Doctors from '../components/Doctors/Doctors';
-import Register from '../components/Register/Register';
 import Sidebar from '../components/Dashboard/Sidebar';
 import Schedule from '../components/Dashboard/Schedule';
 
@@ -17,9 +16,9 @@ import SignUp from '../components/Form/SignUp/SignUp';
 import Messages from '../components/Dashboard/Messages';
 import Patients from '../components/Dashboard/Patients';
 import { auth, handleUserProfile } from '../firebase/utils';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {setCurrentUser} from '../redux/User/User.action';
-import {connect, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import Admin from '../components/Admin/Admin';
 
 //const authListener=null;
@@ -27,9 +26,7 @@ const App=props => {
   const dispatsh = useDispatch();
 
 
-//  const [authListener, setauthListener] = useState(initialState)
- useEffect((starus) => {
-  
+ useEffect(() => {
   const authListener = auth.onAuthStateChanged(async userAuth =>{
     if(userAuth)  {
       const userRef = await handleUserProfile(userAuth);

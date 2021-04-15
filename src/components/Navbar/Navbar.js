@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../../Assets/Images/CALMA-logo.png';
 import './Navbar.css'
 import {
@@ -15,33 +15,34 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
 } from 'reactstrap';
 import { auth } from '../../firebase/utils';
-import { useDispatch, useSelector } from 'react-redux';
-import { userLogOut } from '../../redux/User/User.action';
+import {  useDispatch, useSelector } from 'react-redux';
+import { userSignIn, userSignOut } from '../../redux/User/User.action';
+
 
 
 const mapState = ({user}) => ({
   currentUser:user.currentUser,
-  signout :user.signout
+  signInSuccess :user.signInSuccess,
 });
 
 
-const WebNavbar = (props) => {
-  const dispatch = useDispatch();
-  const {currentUser,signout} = useSelector(mapState);
-  const history = useHistory();
-  const [isOpen, setIsOpen] = useState(false);
-  // useEffect(() => {
-  //   if (signout) {
-  //     history.push("/register/signin");
-  //   }else{
-  //     history.push("/");
-  //   }
-  // }, [signout]);
-  const toggle = () => setIsOpen(!isOpen);
 
+const WebNavbar = (props) => {
+  const {currentUser,signInSuccess} = useSelector(mapState);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+  const dispatch = useDispatch();
+  // const logout=()=>{
+  //   dispatch(userSignOut());
+  // }
+  let success = false;
+  useEffect(() => {
+    if (signInSuccess) {
+       success = true;
+    }
+  }, [signInSuccess]);
   return (
    
     <Container  className=" webNavbar " fluid={true} >
@@ -68,15 +69,15 @@ const WebNavbar = (props) => {
             < NavLink to="/dashboard" tag={Link}  className=" NavbarLinks px-3" >Dashboard</ NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-            {currentUser && [ 
+            {(currentUser || signInSuccess) && [ 
               <NavLink key={1} to="/"  tag={Link} className=" NavbarLinks px-3" onClick={()=>{
-                auth.signOut();
-                //dispatch(userLogOut(!signout))
+                //auth.signOut();
+                dispatch(userSignOut());
                 }}>
                 Log Out
               </NavLink>]}
 
-            {!currentUser&&[ 
+            {(!currentUser && !signInSuccess)&& [ 
               <DropdownToggle key={1} nav caret className=" NavbarLinks px-3">
                 Register
               </DropdownToggle>,
