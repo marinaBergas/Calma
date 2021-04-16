@@ -13,7 +13,6 @@ const mapState = ({user}) => ({
 });
 
 
-
 const Signin = () => {
   const {signInSuccess,currentUser} = useSelector(mapState);
   const history = useHistory();
@@ -80,14 +79,8 @@ const handleSignInWithGoogle = ()=>{
                 />
               </FormGroup>
 
-              <Button type="submit" className="mb-3">
-                Submit
-              </Button>
-              <Button className="btn" onClick={signInWithGoogle}>
-                sign in with google
-              </Button>
-
                <Button type="submit" className="mb-3"  >Submit</Button>
+              <Button className="btn" onClick={handleSignInWithGoogle}>sign in with google</Button>
 
             </Form>
           </div>

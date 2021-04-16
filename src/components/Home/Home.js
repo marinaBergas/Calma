@@ -9,9 +9,9 @@ function Home(props) {
     return (
         <Container fluid={true}>
         <Row>
-          <Col className="px-0" >
+         
              <Header {...props}/>
-          </Col>
+        
         </Row>
         <Row>
         </Row>
