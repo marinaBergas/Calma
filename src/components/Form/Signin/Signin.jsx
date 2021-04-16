@@ -48,7 +48,8 @@ const handleSubmit =  e =>{
   dispatch(userSignIn({email,password}))
 }
 const handleSignInWithGoogle = ()=>{
-  dispatch(signInWithGoogle())
+  dispatch(signInWithGoogle());
+  history.push("/");
 }
 
   return (

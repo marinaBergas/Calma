@@ -4,7 +4,14 @@ import { Container, Row, Col } from 'reactstrap';
 import image from '../../../Assets/Images/header-01.webp';
 import headerGradient from '../../../Assets/Images/header-gradient.svg';
 import { Button } from 'reactstrap';
+import { useSelector } from 'react-redux';
+const mapState = ({user}) => ({
+    currentUser:user.currentUser,
+    signInSuccess :user.signInSuccess,
+  });
 function Header() {
+    const {signInSuccess,currentUser} = useSelector(mapState);
+
     return (
           <div className="d-flex header-container">
             <div className="header-text text-center text-md-left col-12 col-md-8 col-lg-6 col-xl-5 my-5">
@@ -13,7 +20,11 @@ function Header() {
 	             	<img src={headerGradient} className="breathe"/>
 	              </div>
                 </div>
-				<h1 className="mb-4 ml-5">Be Calm With Us</h1>
+                {(currentUser ) && [
+				<h1 key={1} className="mb-4 ml-5">Be Calm With Us {currentUser.displayName}</h1>,
+        <img key={2}  src={currentUser.photoURL}/>
+        ]}
+          {/* <img  src={currentUser.photoUrl}/> */}
                 <p className="large mb-4 pl-5">your personality requires strengthening and your heart, mind and soul deserve specialized care. With Calma, you’ll get personalized treatment from a prescriber trained in mental health care . Talk to your therapist online privately anytime anywhere !</p>
 				{/* <Button className="btn btn-primary">Get started</Button> */}
 			</div> 
