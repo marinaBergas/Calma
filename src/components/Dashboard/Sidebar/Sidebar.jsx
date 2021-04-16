@@ -1,7 +1,7 @@
 import React , {useState} from "react";
 import "./Sidebar.css"
 import { Sidedata } from "./Sidedata";
-import Logo from '../../../../Assets/Images/cl1.jpg';
+import Logo from '../../../Assets/Images/cl1.jpg';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
