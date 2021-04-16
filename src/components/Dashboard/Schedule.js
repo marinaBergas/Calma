@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+import Sidebar from './All-Appointments/Sidebar/Sidebar'
 
 function Schedule() {
     return (

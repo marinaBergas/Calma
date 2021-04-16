@@ -1,7 +1,7 @@
 import React , {useState} from "react";
-import "./sidebar.css"
+import "./Sidebar.css"
 import { Sidedata } from "./Sidedata";
-import Logo from '../../Assets/Images/cl1.jpg';
+import Logo from '../../../../Assets/Images/cl1.jpg';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
@@ -15,7 +15,6 @@ function Sidebar(props) {
   return (
     <>
     <IconContext.Provider value={{ color: '#fff' }}>
-    
       <div className='sidenav'>
         <Link to='#' className='menu-bars'>
           <FaIcons.FaBars onClick={showSidebar} />
@@ -25,15 +24,15 @@ function Sidebar(props) {
         <ul className='nav-menu-items' onClick={showSidebar}>
         
           <li className='navbar-toggle'>
-            <Link to='#' className='menu-bars'>
+            <Link to='#' className='menu-bars-x'>
               <AiIcons.AiOutlineClose />
             </Link>
           </li>
           <div className="Sidebar">
     <div className="docInfo">
-      <img className="docImg mt-5" src={Logo}></img>
-      <h2 className="mt-3">Abanoub</h2>
-      <hr className="hr mt-5"/>
+      <img className="docImg" src={Logo}></img>
+      <h2 className="mt-3">Dr.Stranger</h2>
+      <hr className="hr mt-3"/>
     </div>
     <div className="links">
           {Sidedata.map((item, index) => {
@@ -52,6 +51,7 @@ function Sidebar(props) {
         
       </nav>
     </IconContext.Provider>
+    
   </>
   );
 }

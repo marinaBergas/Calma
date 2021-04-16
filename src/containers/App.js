@@ -6,7 +6,7 @@ import Home from '../components/Home/Home';
 import Blogs from '../components/Blogs/Blogs';
 import Doctors from '../components/Doctors/Doctors';
 import Register from '../components/Register/Register';
-import Sidebar from '../components/Dashboard/Sidebar';
+import Sidebar from '../components/Dashboard/All-Appointments/Sidebar/Sidebar';
 import Schedule from '../components/Dashboard/Schedule';
 
 import Header from '../components/Home/Header/Header';
@@ -20,6 +20,7 @@ import { auth, handleUserProfile } from '../firebase/utils';
 import { useEffect, useState } from 'react';
 import {setCurrentUser} from '../redux/User/User.action';
 import {connect} from 'react-redux'
+import Dashboard from '../components/Dashboard/Dashboard';
 
 //const authListener=null;
 const App=props => {
@@ -53,7 +54,7 @@ const App=props => {
             <Route path="/doctors" component={Doctors}/>
             <Route path="/register/signup" component={SignUp}/>
             <Route path="/register/signin" component={Signin}/>
-            <Route path="/dashboard" exact component={Sidebar}/>
+            <Route path="/dashboard" exact component={Dashboard}/>
             <Route path="/dashboard/Schedule" exact component={Schedule}/>
             <Route path="/dashboard/Messages" exact component={Messages}/>
             <Route path="/dashboard/Patients" exact component={Patients}/>
