@@ -24,7 +24,7 @@ export const Sidedata = [
     {
         title:"Messages",
         icon:<MessageIcon/>,
-        link:"/Messages"
+        link:"/Messenger"
     },
     {
         title:"Logout",

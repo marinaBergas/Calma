@@ -12,7 +12,7 @@ import Schedule from '../components/Dashboard/Schedule';
 import Header from '../components/Home/Header/Header';
 import Footer from '../components/Footer/Footer';
 
-
+import Messenger from '../components/Dashboard/Messenger'
 
 import Signin from '../components/Form/Signin/Signin';
 import SignUp from '../components/Form/SignUp/SignUp';
@@ -34,6 +34,7 @@ function App() {
           </Switch>
           
       </Router>
+      <Messenger/>
     </div>
   );
 }
