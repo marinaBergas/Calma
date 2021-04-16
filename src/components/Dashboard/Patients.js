@@ -1,7 +1,7 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 
-function Schedule() {
+export default function Patients() {
     return (
         <>
         <Sidebar/>
@@ -11,5 +11,3 @@ function Schedule() {
         </>
     )
 }
-
-export default Schedule

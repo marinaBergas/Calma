@@ -1,5 +1,5 @@
 import React from 'react'
-import WebNavbar from '../Navbar/Navbar'
+
 
 function Blogs() {
     return (

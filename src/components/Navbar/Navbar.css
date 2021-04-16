@@ -6,7 +6,8 @@
   }
 
   .webNavbar{
-   background-image: linear-gradient(to right, rgba(136, 171, 204, 0.2), rgba(92, 159, 210,0.2));
+   /* background-image: linear-gradient(to right, rgba(136, 171, 204, 0.2), rgba(92, 159, 210,0.2)); */
+   background-color: white;
 }
 .NavbarLinks{
     color: var(--Navbarlinks) !important;
