@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../Assets/Images/CALMA-logo.png';
+import Logo from '../../Assets/Images/CALMA_Logo_Light-min.png';
 import './Navbar.css'
 import {
   Collapse,
@@ -83,13 +83,13 @@ const WebNavbar = (props) => {
               </DropdownToggle>,
               <DropdownMenu key={2} right>
                < NavLink to="/register/signup" tag={Link} >
-                  <DropdownItem className=" NavbarLinks px-3">
+                  <DropdownItem className=" NavbarLinks sign-up  px-3">
                   Sign Up
                    </DropdownItem>
                 </NavLink>
                 <DropdownItem divider />
                 < NavLink to="/register/signin"  tag={Link} >
-                  <DropdownItem className=" NavbarLinks px-3">
+                  <DropdownItem className=" NavbarLinks sign-in px-3">
                   Sign In
                 </DropdownItem>
                 </NavLink> 

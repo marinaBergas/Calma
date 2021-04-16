@@ -1,0 +1,28 @@
+.footer{
+    background-color: #f4f5f7;
+    background-image: url(../../Assets/Images/footer.jpg);
+}
+.container{
+    background-color:transparent  !important;
+}
+.MuiLink-underlineHover:hover {
+    text-decoration: none; 
+}
+.MuiTypography-colorPrimary {
+    text-decoration: none
+}
+.nav-item{
+    list-style: none;
+    display: inline !important;
+}
+.footer-link{
+    display: inline !important;
+    margin: 20px;
+    
+}
+a:hover{
+    text-decoration: none !important;
+}
+.btn-icon-only {
+    display: inline !important;
+}
