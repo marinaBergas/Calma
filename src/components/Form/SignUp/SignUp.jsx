@@ -98,7 +98,11 @@ const SignUp = () => {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="signup-form col-md-6 col-12">
-            <Form onSubmit={handelSubmit}>
+            <Form
+              onSubmit={(e) => {
+                handelSubmit(e, rSelected);
+              }}
+            >
               <h3 className="my-5">Sign Up As</h3>
               <ButtonGroup className="mb-4">
                 <Button
@@ -199,10 +203,19 @@ const SignUp = () => {
                 <div>
                   <FormGroup className="text-left">
                     <Label for="exampleSelect">Governorates</Label>
-                    <Input type="select" name="select" id="exampleGovernorate">
+                    <Input
+                      type="select"
+                      name="select"
+                      id="exampleGovernorate"
+                      onChange={handelChanges}
+                      defaultValue="Cairo"
+                    >
                       {governorates.map((item) => {
                         return (
-                          <option key={item.id}>
+                          <option
+                            key={item.id}
+                            value={item.governorate_name_en}
+                          >
                             {item.governorate_name_en}
                           </option>
                         );
@@ -211,18 +224,25 @@ const SignUp = () => {
                   </FormGroup>
                   <FormGroup className="text-left">
                     <Label for="exampleSelect">Gender</Label>
-                    <Input type="select" name="select" id="examplegender">
-                      <option>Male</option>
-                      <option>Female</option>
+                    <Input
+                      type="select"
+                      name="selectgender"
+                      id="examplegender"
+                      onChange={handelChanges}
+                      defaultValue="male"
+                    >
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
                     </Input>
                   </FormGroup>
                   <FormGroup className="text-left">
                     <Label for="exampleNumber">Years of experience</Label>
                     <Input
                       type="number"
-                      name="number"
+                      name="numberyear"
                       id="exampleNumber"
                       placeholder="Years"
+                      onChange={handelChanges}
                     />
                   </FormGroup>
                   <FormGroup className="text-left">
