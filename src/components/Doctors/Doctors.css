@@ -1,0 +1,11 @@
+.makeStyles-media-2{
+    height: 300px !important;  
+    background-position: auto !important;
+    background-size:  300px 200px !important;
+}
+.gutterBottom {
+    justify-content: space-between;
+}
+.Price{
+    display: flex;
+}

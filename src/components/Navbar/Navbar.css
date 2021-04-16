@@ -1,14 +1,20 @@
 
 :root {
-    --NavbarColor: #D4D7FF;
+    --NavbarColor: #01020e;
     --Navbarlinks : #2F4179 ;
     --black: #000;
   }
 
   .webNavbar{
-   /* background-image: linear-gradient(to right, rgba(136, 171, 204, 0.2), rgba(92, 159, 210,0.2)); */
-   background-color: white;
+    /* background-image: linear-gradient(to right, rgba(136, 171, 204, 0.8), rgba(92, 159, 210,0.8));  */
+   background-color: var(--NavbarColor);
 }
 .NavbarLinks{
+    color: rgb(245, 245, 245) !important;
+}
+.sign-up{
+    color: var(--Navbarlinks) !important;
+}
+.sign-in{
     color: var(--Navbarlinks) !important;
 }
