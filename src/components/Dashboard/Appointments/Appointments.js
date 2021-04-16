@@ -16,7 +16,7 @@ function Appointments() {
                 <p className="text-muted mb-1 sm-text">Monday, August 19</p>
               </div>
               <div className="right">
-                <img src="https://i.imgur.com/Mcd6HIg.jpg"></img>
+                <img src="https://i.imgur.com/Mcd6HIg.jpg" className="client-img" ></img>
               </div>
             </div>
             <div className="row d-flex justify-content-between mx-2 px-3 card-strip">
