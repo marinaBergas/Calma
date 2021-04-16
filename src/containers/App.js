@@ -6,39 +6,39 @@ import Home from '../components/Home/Home';
 import Blogs from '../components/Blogs/Blogs';
 import Doctors from '../components/Doctors/Doctors';
 import Register from '../components/Register/Register';
-import Sidebar from '../components/Dashboard/All-Appointments/Sidebar/Sidebar';
 import Schedule from '../components/Dashboard/Schedule';
-
 import Header from '../components/Home/Header/Header';
 import Footer from '../components/Footer/Footer';
-
+import Messenger from '../components/Dashboard/Messenger';
 import Signin from '../components/Form/Signin/Signin';
 import SignUp from '../components/Form/SignUp/SignUp';
-import Messages from '../components/Dashboard/Messages';
+// import Messages from '../components/Dashboard/Messages';
 import Patients from '../components/Dashboard/Patients';
 import { auth, handleUserProfile } from '../firebase/utils';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {setCurrentUser} from '../redux/User/User.action';
 import {connect} from 'react-redux'
 import Dashboard from '../components/Dashboard/Dashboard';
+import {useDispatch} from 'react-redux'
+import Admin from '../components/Admin/Admin';
 
 //const authListener=null;
 const App=props => {
-  const {currentUser , setCurrentUser} = props
-//  const [authListener, setauthListener] = useState(initialState)
- useEffect((starus) => {
-  
+  const dispatsh = useDispatch();
+
+
+ useEffect(() => {
   const authListener = auth.onAuthStateChanged(async userAuth =>{
     if(userAuth)  {
       const userRef = await handleUserProfile(userAuth);
       userRef.onSnapshot(snapshot=>{
-        setCurrentUser({
+        dispatsh(setCurrentUser({
           id : snapshot.id,
           ...snapshot.data()
-        })
+        }))
       })
     }
-    setCurrentUser (userAuth)
+    dispatsh(setCurrentUser (userAuth))
   })
  },[])
 
@@ -56,19 +56,15 @@ const App=props => {
             <Route path="/register/signin" component={Signin}/>
             <Route path="/dashboard" exact component={Dashboard}/>
             <Route path="/dashboard/Schedule" exact component={Schedule}/>
-            <Route path="/dashboard/Messages" exact component={Messages}/>
+            <Route path="/Dashboard/Messenger" exact component={Messenger}/>
             <Route path="/dashboard/Patients" exact component={Patients}/>
-
+            <Route path="/admin" exact component={Admin}/>
           </Switch>
           <Footer/>
       </Router>
+      {/* <Messenger/> */}
     </div>
   );
 }
-const mapStateToProps = ({user})=>({
-   currentUser:user.currentUser
-});
-const mapDispatchToProps =dispatch=>({
-  setCurrentUser :user => dispatch(setCurrentUser(user))
-});
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+
+export default App;

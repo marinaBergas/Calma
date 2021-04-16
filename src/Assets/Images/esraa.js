@@ -1,12 +1,11 @@
 import React from 'react'
 
-
-function Blogs() {
+const esraa = () => {
     return (
         <div>
-            <h1>Blogs</h1> 
+            
         </div>
     )
 }
 
-export default Blogs
+export default esraa

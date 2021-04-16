@@ -1,5 +1,5 @@
 import React from 'react'
-import Sidebar from './All-Appointments/Sidebar/Sidebar'
+import Sidebar from './Sidebar/Sidebar'
 
 export default function Patients() {
     return (

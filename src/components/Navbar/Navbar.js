@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../Assets/Images/CALMA-logo.png';
+import Logo from '../../Assets/Images/CALMA_Logo_Light-min.png';
 import './Navbar.css'
 import {
   Collapse,
@@ -15,19 +15,34 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText
 } from 'reactstrap';
 import { auth } from '../../firebase/utils';
-import {connect} from 'react-redux';
+import {  useDispatch, useSelector } from 'react-redux';
+import { userSignIn, userSignOut } from '../../redux/User/User.action';
+
+
+
+const mapState = ({user}) => ({
+  currentUser:user.currentUser,
+  signInSuccess :user.signInSuccess,
+});
 
 
 
 const WebNavbar = (props) => {
-  const {currentUser} = props;
+  const {currentUser,signInSuccess} = useSelector(mapState);
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => setIsOpen(!isOpen);
-
+  const dispatch = useDispatch();
+  // const logout=()=>{
+  //   dispatch(userSignOut());
+  // }
+  let success = false;
+  useEffect(() => {
+    if (signInSuccess) {
+       success = true;
+    }
+  }, [signInSuccess]);
   return (
    
     <Container  className=" webNavbar " fluid={true} >
@@ -54,24 +69,27 @@ const WebNavbar = (props) => {
             < NavLink to="/dashboard" tag={Link}  className=" NavbarLinks px-3" >Dashboard</ NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-            {currentUser && [ 
-              <DropdownToggle key={1} nav caret className=" NavbarLinks px-3" onClick={()=>(auth.signOut())}>
+            {(currentUser || signInSuccess) && [ 
+              <NavLink key={1} to="/"  tag={Link} className=" NavbarLinks px-3" onClick={()=>{
+                //auth.signOut();
+                dispatch(userSignOut());
+                }}>
                 Log Out
-              </DropdownToggle>]}
+              </NavLink>]}
 
-            {!currentUser&&[ 
+            {(!currentUser && !signInSuccess)&& [ 
               <DropdownToggle key={1} nav caret className=" NavbarLinks px-3">
                 Register
               </DropdownToggle>,
               <DropdownMenu key={2} right>
                < NavLink to="/register/signup" tag={Link} >
-                  <DropdownItem className=" NavbarLinks px-3">
+                  <DropdownItem className=" NavbarLinks sign-up  px-3">
                   Sign Up
                    </DropdownItem>
                 </NavLink>
                 <DropdownItem divider />
                 < NavLink to="/register/signin"  tag={Link} >
-                  <DropdownItem className=" NavbarLinks px-3">
+                  <DropdownItem className=" NavbarLinks sign-in px-3">
                   Sign In
                 </DropdownItem>
                 </NavLink> 
@@ -89,8 +107,5 @@ const WebNavbar = (props) => {
 WebNavbar.defaultProps = {
   currentUser : null
 };
-const mapStateToProps = ({user}) => ({
-  currentUser:user.currentUser
-});
 
-export default connect(mapStateToProps,null) (WebNavbar);
+export default WebNavbar;

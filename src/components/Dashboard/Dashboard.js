@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card/Card";
-import Sidebar from "./All-Appointments/Sidebar/Sidebar";
+import Sidebar from "./Sidebar/Sidebar";
 import Appointments from "./Appointments/Appointments";
 
 import WebNavbar from "../Navbar/Navbar";
