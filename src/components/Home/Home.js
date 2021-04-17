@@ -11,20 +11,21 @@ function Home(props) {
     return (
       <>
         <Container fluid={true} className="header-container px-0 py-5">
-          <Row>
+          <Row className=" align-items-center">
              <Header {...props}/>
            </Row>
         </Container>
-        <Container fluid={true} className="Doctors-container px-0 py-5">
-          <Row >
+        <Container fluid={true} className="Doctors-container  px-0 py-5">
+          <Row className=" doctor-container ">
               <DoctorSection/>
           </Row>
         </Container>
-        <Container fluid={true} className="Doctors-container px-0 py-5">
-          <Row className="justify-content-center">
+        <Container fluid={true} className="Blogs-container  px-0 py-5">
+          <Row className=" blog-container ">
               <BlogsHome/>
           </Row>
         </Container>
+        <Footer/>
       </>
     )
 }

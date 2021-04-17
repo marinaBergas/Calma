@@ -21,6 +21,7 @@ import {setCurrentUser} from '../redux/User/User.action';
 import {useDispatch} from 'react-redux'
 import Admin from '../components/Admin/Admin';
 import Messenger from '../components/Dashboard/Messenger';
+import AboutUs from '../components/About-us/AboutUs';
 
 //const authListener=null;
 const App=props => {
@@ -50,7 +51,7 @@ const App=props => {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/blogs" component={Blogs}/>
-            <Route path="/about" component={Header}/>
+            <Route path="/about" component={AboutUs}/>
             <Route path="/doctors" component={Doctors}/>
             <Route path="/register/signup" component={SignUp}/>
             <Route path="/register/signin" component={Signin}/>
@@ -60,7 +61,7 @@ const App=props => {
             <Route path="/dashboard/Patients" exact component={Patients}/>
             <Route path="/admin" exact component={Admin}/>
           </Switch>
-          {/* <Footer/> */}
+          
       </Router>
     </div>
   );

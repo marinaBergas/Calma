@@ -7,7 +7,7 @@ import {
   CarouselCaption,
   Row
 } from 'reactstrap';
-import photo from '../../../Assets/Images/header.jpeg';
+import photo from '../../../Assets/Images/d1.jpg';
 import './Doctors.css'
 import { Media } from 'reactstrap';
 import Rating from '@material-ui/lab/Rating';
@@ -63,20 +63,26 @@ const DoctorSection = (props) => {
         onExited={() => setAnimating(false)}
       >        
         <Media className=" align-items-center justify-content-center row p-5  flex-wrap">
-          <Media left className="col-md-4 col-sm-12 ml-5">
+          <Media left className="col-md-4 col-sm-12 ml-0">
             <Media object src={photo} alt="Generic placeholder image" className="w-100 " /></Media>
-            <Media body className="p-5 text-left col-md-6 col-sm-10">
-              <Media heading >Media heading</Media>
-                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            <Media body className="p-5 text-left col-md-6 col-sm-10 ">
+              <Media heading className="ml-4">Media heading</Media>
+              <Media  className="ml-4">  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</Media>
                   <div className="py-5 text-left">
                    <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
                   </div>
-                  <Button  color="primary" className="bg-info m-2 p-0">
-                     Book Now
-                   </Button>
-                   <Button  color="primary" className="bg-info m-2 p-0" >
-                     See More
-                   </Button>
+                  <div className="row d-flex flex-nowrap">
+                    <div className=" col-md-6 col-sm-6 ">
+                      <Button  color="primary" className="bg-primary my-2 p-0 mx-4 w-100">
+                         Book Now
+                      </Button>
+                    </div>
+                    <div  className=" col-md-6 col-sm-6 ">
+                      <Button  color="primary" className="bg-primary my-2 p-0 mx-4  doctor-btn w-100 " >
+                        See More
+                      </Button>
+                    </div>
+                  </div>
             </Media>
           </Media>
       </CarouselItem>
@@ -89,7 +95,7 @@ const DoctorSection = (props) => {
         {
           `.custom-tag {
               max-width: 100%;
-              background: white;
+              
               background-color: var( --back-ground)
             }
             `
