@@ -13,7 +13,7 @@ function Header() {
     const {signInSuccess,currentUser} = useSelector(mapState);
 
     return (
-          <div className="d-flex header-container">
+          <>
             <div className="header-text text-center text-md-left col-12 col-md-8 col-lg-6 col-xl-5 my-5">
                 <div className="bg-gradient-wrap stretch-full capped-width bg-gradient-index">
                   <div className="bg-gradient ">
@@ -29,9 +29,9 @@ function Header() {
 				{/* <Button className="btn btn-primary">Get started</Button> */}
 			</div> 
             <div className="header-image col-12 col-md-4 col-lg-6 col-xl-7">
-				<img src={image} className="img-fluid"/>
+				<img src={image} className="img-fluid p-0"/>
 			</div> 
-         </div>
+         </>
     )
 }
 

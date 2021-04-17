@@ -16,7 +16,7 @@
       align-items: center;
   }
   .bg-gradient {
-    top: -60%;
+    top: -10%;
     transform: rotate(
     180deg);
     position: absolute;

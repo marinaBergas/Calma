@@ -12,10 +12,11 @@ import { FaUserAlt } from "react-icons/fa";
 import useForm from "./useForm";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { userSignOut } from '../../../redux/User/User.action';
+import { userSignOut, userSignUp } from '../../../redux/User/User.action';
 
 const mapState = ({user}) => ({
-  signUpSuccess:user.signUPSuccess 
+  signUpSuccess:user.signUpSuccess ,
+  signInSuccess:user.signInSuccess ,
 });
 
 const SignUp = () => {
@@ -107,14 +108,21 @@ const SignUp = () => {
     { id: "27", governorate_name_ar: "سوهاج", governorate_name_en: "Sohag" },
   ];
   
-  const {signUpSuccess} = useSelector(mapState);
+  const {signUpSuccess,signInSuccess} = useSelector(mapState);
   const dispatch = useDispatch();
   const history = useHistory();
   useEffect(() => {
+
     if (signUpSuccess) {
       history.push('/');
     }
   }, [signUpSuccess]);
+  useEffect(() => {
+    if (signInSuccess) {
+      history.push('/');
+    }
+  }, [signInSuccess]);
+
 
   const { handelChanges, handelSubmit, errors,values } = useForm();
   return (
