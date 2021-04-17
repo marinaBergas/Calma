@@ -1,4 +1,8 @@
 import React from 'react'
+import AllAppoints from '../Dashboard/All-Appointments/AllAppoints'
+import Appointments from '../Dashboard/Appointments/Appointments'
+import WebNavbar from '../Navbar/Navbar'
+// const dispatch = useDispatch()
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -12,6 +16,11 @@ import photo from '../../Assets/Images/d1.jpg'
 import './Doctors.css'
 import { withStyles, createStyles } from "@material-ui/core/styles";
 import MoneyIcon from '@material-ui/icons/Money';
+// const [state, setstate] = useState(initialState)
+/* function Doctors() {
+    return (
+        <div>
+      */
 const useStyles = makeStyles((theme)=>({
   root: {
     maxWidth: 345,

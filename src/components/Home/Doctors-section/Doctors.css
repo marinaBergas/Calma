@@ -1,0 +1,23 @@
+
+
+.text-danger{
+    display: inline !important;
+}
+.btn {
+    width: 20% !important;
+    background-color: var(--btn-color )  !important;
+    border-radius: 5rem !important;
+}
+.MuiRating-root,.MuiRating-label,.MuiRating-decimal {
+    margin-left: 0px !important;
+}
+ .half-rating-1.MuiRating-iconFilled{
+    margin-left: 0px !important;
+ } 
+
+.carousel{
+    background-color: var( --back-ground)  !important;
+} 
+.Doctors-container{
+    background-color: var( --back-ground)  !important;
+}

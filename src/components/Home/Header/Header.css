@@ -1,3 +1,17 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+  font-family: 'Mulish', sans-serif;
+  overflow: auto;
+}
+ul {
+  list-style: none;
+}
+
 .header{
     height: 100vh;
 /*  
@@ -9,19 +23,19 @@
 }
 
   .header-image{
-    box-shadow: 10px 40px 50px rgb(229 233 246 / 100%);
+    /* box-shadow: 10px 40px 50px rgb(229 233 246 / 100%); */
     position: relative;
   }
   .header-container{
       align-items: center;
   }
   .bg-gradient {
-    top: -60%;
+    top: -10%;
     transform: rotate(
     180deg);
     position: absolute;
     width: 120%;
-    right: -80%;
+    right: -120%;
   }
   @keyframes breathe{0%{transform:scale(1)}to{transform:scale(.7)}}
   .breathe {

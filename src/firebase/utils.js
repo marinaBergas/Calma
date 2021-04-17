@@ -9,7 +9,7 @@ firebase.initializeApp(firebaseConfig)
 
 
 export const  auth = firebase.auth();
-export const firestore = firebase.firestore();
+export const db = firebase.firestore();
 export const GoogleProvider = new firebase.auth.GoogleAuthProvider();
   GoogleProvider.setCustomParameters({prompt:'select_account'});
 
@@ -19,7 +19,7 @@ export const handleUserProfile = async (userAuth,additionalData)=>{
     if(!userAuth) return ;
     const {uid} = userAuth;
     //firebase request
-    const userRef = firestore.doc(`users/${uid}`);
+    const userRef = db.doc(`users/${uid}`);
     // fetch/read the data from firebase
     const snapshot = await userRef.get();
     if(!snapshot.exists){

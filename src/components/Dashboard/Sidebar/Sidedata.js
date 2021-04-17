@@ -27,7 +27,9 @@ export const Sidedata = [
     {
         title:"Messages",
         icon:<MessageIcon/>,
-        link:"/dashboard/Messages",
+
+        link:"/Messenger",
+        link:"/dashboard/Messenger",
         cName: 'nav-text'
     },
     {

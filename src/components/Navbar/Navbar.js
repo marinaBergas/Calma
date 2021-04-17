@@ -45,7 +45,7 @@ const WebNavbar = (props) => {
   }, [signInSuccess]);
   return (
    
-    <Container  className=" webNavbar " fluid={true} >
+    <Container  className=" webNavbar bg-primary" fluid={true} >
       <Navbar  dark  expand="md"  className=" webNavbar " fixed="top" >
         <NavbarBrand  to="/" tag={Link}>
            <img src={Logo}  alt="Logo" style={{height:"35px"}} /> 
