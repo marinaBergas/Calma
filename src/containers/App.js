@@ -59,7 +59,7 @@ const App=props => {
             <Route path="/dashboard/Patients" exact component={Patients}/>
             <Route path="/admin" exact component={Admin}/>
           </Switch>
-          <Footer/>
+          {/* <Footer/> */}
       </Router>
     </div>
   );

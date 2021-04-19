@@ -12,3 +12,7 @@ form{
 
     justify-content:center ;
 }
+.signup
+{
+    background-image: url('../../../Assets/Images/bg-signup.jpg');
+}
