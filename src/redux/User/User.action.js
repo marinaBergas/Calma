@@ -11,16 +11,15 @@ export const setCurrentUser = user =>({
 
 
   
-  export const signInWithGoogle = async dispatch =>{
+  export const signInWithGoogle = ()=>async dispatch =>{
    try{
-    await auth.signInWithPopup(GoogleProvider)
-    .then (()=>{
+    const  userData = await auth.signInWithPopup(GoogleProvider)
       dispatch({
-      type : userType.SIGN_IN_SUCCESS ,
+      type : userType. SIGN_IN_WIH_GOOGLE_SUCCESS  ,
       payload : true
     })
-   }
-    )
+    
+  
   } catch (err){
   //console.log(err)
   }
@@ -30,10 +29,11 @@ export const setCurrentUser = user =>({
 
 export const userSignIn = ({email,password})=>async dispatch =>{
 try{
-      await auth.signInWithEmailAndPassword(email,password);
+    const userData=  await auth.signInWithEmailAndPassword(email,password);
+    setCurrentUser(userData);
       dispatch({
         type : userType.SIGN_IN_SUCCESS ,
-        payload : true
+        payload : userData
       })
   }catch{
     alert('this email not found please signUp')

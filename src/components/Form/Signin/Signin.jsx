@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Button, Form, FormGroup, Input ,Label} from "reactstrap";
 import image from "../../../Assets/Images/calm.jpg";
 import {  useHistory } from 'react-router-dom';
 import "./Signin.css";
@@ -48,7 +48,8 @@ const handleSubmit =  e =>{
   dispatch(userSignIn({email,password}))
 }
 const handleSignInWithGoogle = ()=>{
-  dispatch(signInWithGoogle())
+  dispatch(signInWithGoogle());
+  history.push("/");
 }
 
   return (

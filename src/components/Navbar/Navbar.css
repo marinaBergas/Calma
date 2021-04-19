@@ -3,14 +3,21 @@
     --NavbarColor: #01020e;
     --Navbarlinks : #2F4179 ;
     --black: #000;
+    --back-ground:#F4F4F4;
   }
 
   .webNavbar{
     /* background-image: linear-gradient(to right, rgba(136, 171, 204, 0.8), rgba(92, 159, 210,0.8));  */
-   background-color: var(--NavbarColor);
+   background-color: #0785F3;
 }
 .NavbarLinks{
-    color: rgb(245, 245, 245) !important;
+    color: white !important;
+    line-height: 1.6  !important;
+    margin: 15px 3px;
+    padding: 10px 15px;
+    opacity: .8;
+    text-transform: uppercase;
+    font-weight: 600  !important;
 }
 .sign-up{
     color: var(--Navbarlinks) !important;

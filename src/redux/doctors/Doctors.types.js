@@ -1,4 +1,4 @@
 const doctorTypes = {
-    ADD_NEW_DOCTOR='ADD_NEW_DOCTOR',
+    SET_NEW_DOCTOR : 'SET_NEW_DOCTOR',
     
 }
