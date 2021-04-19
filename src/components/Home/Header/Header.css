@@ -11,14 +11,22 @@ body {
 ul {
   list-style: none;
 }
+p{
+  font-size: 1.04em !important;
+  color: #606060;
+  line-height: 1.86em !important;
+  font-weight: 400 !important;
+ } 
+ /* s */
 
-.header{
-    height: 100vh;
-/*  
-    background-image: linear-gradient(90deg, rgba(209, 208, 224, 0.8) 0%, rgba(147,213,222,0.3) 0%),url(../../../Assets/Images/header-01.webp);
+.header-container{
+    height: 80vh;
+    background-attachment: fixed;
+    background-image: linear-gradient(90deg, rgba(21, 66, 163, 0.1)0%, rgba(37, 78, 155, 0.4) 0%),url(../../../Assets/Images/signin.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center; */
+    background-position: center center;
+    background-color: var(--back-ground);
 
 }
 
@@ -45,4 +53,11 @@ ul {
     opacity: .4;
     overflow: hidden;
     z-index: 0;
+
 }
+.bg-gradient {
+  background-color: var( --back-ground )  !important;
+}
+/* .header-container{
+  background-color: var( --back-ground )  !important;
+} */
