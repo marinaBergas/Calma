@@ -43,7 +43,7 @@ function Footer() {
                             <Link  to="/blogs"  className="footer-link text-white">Blog</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/"   className="footer-link text-white">Privacy and Policy</Link>
+                            <Link to="/privace"   className="footer-link text-white">Privacy and Policy</Link>
                         </li>
                     </ul>
                     </div>
