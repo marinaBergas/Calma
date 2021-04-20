@@ -27,7 +27,7 @@ const AboutUs = () => {
                 <Row className="  justify-content-center align-items-center">
                      <Media className=" align-items-center justify-content-center  px-5  flex-wrap">
                         <Media body className="p-5 text-left col-md-6 col-sm-10 ">
-                            <Media heading className="ml-4">Happy Patients</Media>
+                            <Media heading className="ml-4">Who We Are ?</Media>
                             <Media  className="ml-4 py-3 text-secondary">
                             <p className=" text-left text-secondary h6 py-3">Calma site established in 2021 for psychotherapy and addiction treatment,  you can join us at any time and anywhere. We are at your service, Calma's certified professionals are here to guide you through your problems whether they're treated individually or as part of a couple.</p>
                         </Media>

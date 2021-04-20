@@ -102,12 +102,12 @@ const DoctorSection = (props) => {
         }
       </style>
       <Carousel
-      interval={false}
+      // interval={false}
         activeIndex={activeIndex}
         next={next}
         previous={previous}
       >
-        {/* <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} /> */}
+        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} className="p-5 justify-content-between " />
         <CarouselControl direction="next" directionText="Next" onClickHandler={next}  className="p-5 justify-content-flex-end"/>
