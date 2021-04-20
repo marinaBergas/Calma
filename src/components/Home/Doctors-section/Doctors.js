@@ -62,7 +62,7 @@ const DoctorSection = (props) => {
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
       >        
-        <Media className=" align-items-center justify-content-center row p-5  flex-wrap">
+        <Media className=" align-items-center justify-content-center  p-5  flex-wrap">
           <Media left className="col-md-4 col-sm-12 ml-0">
             <Media object src={photo} alt="Generic placeholder image" className="w-100 " /></Media>
             <Media body className="p-5 text-left col-md-6 col-sm-10 ">

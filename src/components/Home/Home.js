@@ -5,13 +5,14 @@ import Footer from '../Footer/Footer';
 import WebNavbar from '../Navbar/Navbar';
 import DoctorSection from './Doctors-section/Doctors';
 import BlogsHome from './Blogs.js/BlogsHome';
+import HappyClient from './HappyClientSection/HappyClient';
 
 
 function Home(props) {
     return (
       <>
-        <Container fluid={true} className="header-container px-0 py-5">
-          <Row className=" align-items-center">
+        <Container fluid={true} className="header-container px-0 py-5 ">
+          <Row className="align-items-center justify-content-center header-row" >
              <Header {...props}/>
            </Row>
         </Container>
@@ -21,8 +22,13 @@ function Home(props) {
           </Row>
         </Container>
         <Container fluid={true} className="Blogs-container  px-0 py-5">
-          <Row className=" blog-container ">
+          <Row className=" blog-container justify-content-center  ">
               <BlogsHome/>
+          </Row>
+        </Container>
+         <Container fluid={true} className="HappyClient-container  px-0 py-5">
+          <Row className=" HappyClient-container ">
+              <HappyClient/>
           </Row>
         </Container>
         <Footer/>
