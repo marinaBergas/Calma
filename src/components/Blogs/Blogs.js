@@ -1,55 +1,42 @@
 
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
+// import './Blogs.css';
+import photo from '../../Assets/Images/bg-header.jpg';
+import photo2 from '../../Assets/Images/calm.jpg';
+import photo3 from '../../Assets/Images/header.jpeg';
+import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import Blog from './BlogDetails/BlogDetails';
 
-// export default Blogs
-
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-});
-
-export default function Blogs() {
-  const classes = useStyles();
-
+const Blogs =(props) => {
+  const articles =[
+    {
+    title:'zaghlool',
+   },
+   {
+    title:'hamada',
+   }
+  ]
+ const m=articles.map((article)=>{
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
+    <>
+    
+    <Blog title={article.title}/>
+    
+    </>
   );
-}
+  
+ })
+ return(
+   <div>{m}</div>
+ )
+ }
+   
+;
+  
+  export default Blogs;
