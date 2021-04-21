@@ -13,6 +13,7 @@ const initialState = {
   selectgender: "male",
   numberyear: "",
   license: "",
+  spectext:"",
 };
 const useForm = () => {
   const [values, setValues] = useState(initialState);

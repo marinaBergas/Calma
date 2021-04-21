@@ -6,7 +6,7 @@ import { firebaseConfig } from "./config";
 firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+export const db = firebase.firestore();
 export const GoogleProvider = new firebase.auth.GoogleAuthProvider();
 GoogleProvider.setCustomParameters({ prompt: "select_account" });
 
@@ -15,9 +15,9 @@ export const handleUserProfile = async (userAuth, usertype, additionalData) => {
   const { uid } = userAuth;
   let userRef;
   if (usertype == 1) {
-    userRef = firestore.doc(`users/${uid}`);
+    userRef = db.doc(`users/${uid}`);
   } else {
-    userRef = firestore.doc(`doctors/${uid}`);
+    userRef = db.doc(`doctors/${uid}`);
   }
   const snapshot = await userRef.get();
   if (!snapshot.exists) {

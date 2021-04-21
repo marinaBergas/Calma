@@ -1,18 +1,25 @@
-
-.container
-{
-    width:40%;
-    margin:auto;
-    background-color: #fff;
-    
+.container {
+  width: 40%;
+  margin: auto;
+  background-color: #fff;
 }
-form{
-    
-    flex-direction: column;
-
-    justify-content:center ;
+form {
+  flex-direction: column;
+  justify-content: center;
 }
-.signup
+.signup {
+  background-image: url("../../../Assets/Images/header-cover.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.signup-form {
+  background-color: #fff;
+}
+h3 {
+  color: #606060;
+}
+.btn
 {
-    background-image: url('../../../Assets/Images/bg-signup.jpg');
+    background-color: chocolate;
+    z-index: 100;
 }
