@@ -22,6 +22,9 @@ import {useDispatch} from 'react-redux'
 import Admin from '../components/Admin/Admin';
 import Messenger from '../components/Dashboard/Messenger';
 import AboutUs from '../components/About-us/AboutUs';
+import Blog from '../components/Blogs/BlogDetails/BlogDetails';
+import BlogArticle from '../components/Blogs/BlogDetails/BlogArticle';
+import Privace from '../components/Privace/Privace';
 
 //const authListener=null;
 const App=props => {
@@ -61,6 +64,8 @@ const App=props => {
             <Route path="/dashboard/Messenger" exact component={Messenger}/>
             <Route path="/dashboard/Patients" exact component={Patients}/>
             <Route path="/admin" exact component={Admin}/>
+            <Route path="/Blog" exact component={BlogArticle}/>
+            <Route path="/privace" exact component={Privace}/>
           </Switch>
           
       </Router>
