@@ -6,6 +6,7 @@ import WebNavbar from '../Navbar/Navbar';
 import DoctorSection from './Doctors-section/Doctors';
 import BlogsHome from './Blogs.js/BlogsHome';
 import HappyClient from './HappyClientSection/HappyClient';
+import CentersHome from './CentersHome/Centers';
 
 
 function Home(props) {
@@ -26,12 +27,19 @@ function Home(props) {
               <BlogsHome/>
           </Row>
         </Container>
-         <Container fluid={true} className="HappyClient-container  px-0 py-5">
+        <Container fluid={true} className="HappyClient-container  px-0 py-5 ">
           <Row className=" HappyClient-container ">
               <HappyClient/>
           </Row>
         </Container>
+
+        <Container fluid={true} className="Blogs-container  px-0 ">
+          <Row className=" blog-container justify-content-center  ">
+              <CentersHome/>
+          </Row>
+        </Container>
         <Footer/>
+        
       </>
     )
 }

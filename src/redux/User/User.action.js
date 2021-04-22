@@ -10,7 +10,6 @@ export const setCurrentUser = user =>({
 });
 
 
-  
   export const signInWithGoogle = ()=>async dispatch =>{
    try{
     const  userData = await auth.signInWithPopup(GoogleProvider)

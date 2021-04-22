@@ -9,8 +9,8 @@ import './HappyClient.css';
 const HappyClient = () => {
     return (
         <>
-        <Media className=" align-items-center justify-content-center  px-5  flex-wrap">
-        <Media body className="p-5 text-left col-md-6 col-sm-10 ">
+        <Media className=" align-items-center justify-content-center   flex-wrap">
+        <Media body className=" text-left col-md-6 col-sm-10 ">
                <Media heading className="ml-4">Happy Patients</Media>
                <Media  className="ml-4 py-3 text-secondary">
                   <p> We create healthy minds free of depression and anxietys ,Therapy helps in many different areas of sexual wellness. Whether you're experiencing sexual pain, intimacy concerns or low desire and could use some guidance; </p>
@@ -40,7 +40,7 @@ const HappyClient = () => {
          
 
             <Media left className="col-md-4 col-sm-12 ml-0">
-               <Media object src={photo} alt="Generic placeholder image" className="w-100 " /></Media>
+               <Media object src={photo} alt="Generic placeholder image" className="w-100 px-5" /></Media>
         </Media>
         </>
     )

@@ -1,0 +1,6 @@
+.center-card{
+  height: 450px !important;
+}
+.center-card:hover{
+    cursor: pointer;
+}

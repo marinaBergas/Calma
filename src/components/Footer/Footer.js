@@ -1,7 +1,7 @@
 
 import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import  {NavLink} from 'reactstrap'
 import React from 'react'
 import './Footer.css'
@@ -9,7 +9,7 @@ import './Footer.css'
 import { Link } from 'react-router-dom';
 function Footer() {
     return (
-        <footer className="footer py-5 ">
+        <footer className="footer pt-5 ">
             <div className="container">
                 <div className=" row-grid align-items-center mb-5 row">
                     <div className="col-lg-6 text-left">
@@ -17,14 +17,14 @@ function Footer() {
                       <h4 className=" mb-0 font-weight-light text-white">Let's get in touch on any of these platforms.</h4>
                     </div>
                     <div className="text-lg-center btn-wrapper col-lg-6">
-                        <Link to="/"   className="btn-icon-only rounded-circle btn btn-twitter text-white">
-                            <TwitterIcon />
+                        <Link to="/"   className="btn-icon-only rounded-circle btn btn-instgram text-white">
+                            <InstagramIcon />
                         </Link>
                         <Link to="/"  className="btn-icon-only rounded-circle ml-1 btn btn-facebook text-white">
                             <FacebookIcon />
                         </Link>
-                        <Link to="/"  className="btn-icon-only rounded-circle ml-1 btn btn-github text-white">
-                          <GitHubIcon />
+                        <Link to="/"  className="btn-icon-only rounded-circle ml-1 btn btn-whatsAPP text-white">
+                          <WhatsAppIcon />
                         </Link>
                     </div>
                 </div>
