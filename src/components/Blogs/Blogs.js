@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from "react";
 
 
 function Blogs() {
-    return (
-        <div>
-            <h1>Blogs</h1> 
-        </div>
-    )
+
+  return (
+    <>
+    </>
+  );
 }
 
-export default Blogs
+export default Blogs;

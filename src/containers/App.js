@@ -46,7 +46,6 @@ const App=props => {
 
     <div className="App">
       <Router>
-        <WebNavbar/>
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/blogs" component={Blogs}/>
@@ -60,7 +59,6 @@ const App=props => {
             <Route path="/dashboard/Patients" exact component={Patients}/>
             <Route path="/admin" exact component={Admin}/>
           </Switch>
-          <Footer/>
       </Router>
       {/* <Messenger/> */}
     </div>
