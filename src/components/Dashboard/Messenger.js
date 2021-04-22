@@ -7,6 +7,7 @@ import Message from "./Message";
 import {db} from "../../firebase/utils";
 import firebase from "firebase";
 import FlipMove from "react-flip-move";
+import Sidebar from './Sidebar/Sidebar'
 
 function Messenger() {
   const [input, setInput] = useState("");

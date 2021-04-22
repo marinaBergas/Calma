@@ -1,0 +1,8 @@
+.privace-container{
+    padding-top: 200px;
+    padding-bottom: 100px;
+    background-color: var(--back-ground);
+}
+.MuiPaper-root{
+    background-color: var(--back-ground) !important;
+}

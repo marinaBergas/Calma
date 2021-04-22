@@ -1,0 +1,16 @@
+
+.Blogs-container{
+    background-color: var( --back-ground )  !important;
+   
+}
+/* .doctor-btn{
+
+} */
+
+.card:hover {
+    transform: scale(1.2) ;
+    z-index:1;
+}
+.card{
+    transition: transform .2s;
+}

@@ -1,25 +1,24 @@
-
 import React, { useState } from "react";
 
-import {useHistory,link} from 'react-router-dom'
+import { useHistory, link } from "react-router-dom";
 
-import { Button, Form, FormGroup, Label, Input,ButtonGroup } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input, ButtonGroup } from "reactstrap";
 import image from "../../../Assets/Images/calm.jpg";
 
 import "./SignUp.css";
 import { FaUserMd } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import useForm from "./useForm";
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { userSignOut } from '../../../redux/User/User.action';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { userSignOut, userSignUp } from "../../../redux/User/User.action";
 
-const mapState = ({user}) => ({
-  signUpSuccess:user.signUPSuccess 
+const mapState = ({ user }) => ({
+  signUpSuccess: user.signUpSuccess,
+  signInSuccess: user.signInSuccess,
 });
 
 const SignUp = () => {
- 
   const [rSelected, setRSelected] = useState(1);
   const governorates = [
     { id: "1", governorate_name_ar: "القاهرة", governorate_name_en: "Cairo" },
@@ -106,29 +105,39 @@ const SignUp = () => {
     },
     { id: "27", governorate_name_ar: "سوهاج", governorate_name_en: "Sohag" },
   ];
-  
-  const {signUpSuccess} = useSelector(mapState);
+
+  const { signUpSuccess, signInSuccess } = useSelector(mapState);
   const dispatch = useDispatch();
   const history = useHistory();
   useEffect(() => {
     if (signUpSuccess) {
-      history.push('/');
+      history.push("/");
     }
   }, [signUpSuccess]);
+  useEffect(() => {
+    if (signInSuccess) {
+      history.push("/");
+    }
+  }, [signInSuccess]);
 
-  const { handelChanges, handelSubmit, errors,values } = useForm();
+  const { handelChanges, handelSubmit, errors, values } = useForm();
   return (
     <div className="signup py-5">
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="signup-form col-md-6 col-12">
-            <Form onSubmit={handelSubmit}>
-              <h3 className="my-5">Sign Up As</h3>
+            <Form
+              className="p-3"
+              onSubmit={(e) => {
+                handelSubmit(e, rSelected);
+              }}
+            >
+              <h3 className="mt-5">Sign Up As</h3>
               <ButtonGroup className="mb-4">
                 <Button
                   className={
                     rSelected === 1
-                      ? "btn btn-dark rounded-circle border border-dark mx-3 "
+                      ? "btn btn-dark rounded-circle border border-dark mx-3"
                       : "btn btn-light rounded-circle border border-dark mx-3"
                   }
                   onClick={() => setRSelected(1)}
@@ -136,10 +145,10 @@ const SignUp = () => {
                 >
                   <FaUserAlt
                     className={
-                      rSelected === 1 ? "text-white h2" : "text-dark h2"
+                      rSelected === 1 ? "text-primary h2" : "text-dark h2"
                     }
                   />
-                  <p>Visitor</p>
+                  <p className="fw-bolder" >Visitor</p>
                 </Button>
                 <Button
                   className={
@@ -152,14 +161,14 @@ const SignUp = () => {
                 >
                   <FaUserMd
                     className={
-                      rSelected === 2 ? "text-white h2" : "text-dark h2"
+                      rSelected === 2 ? "text-primary h2" : "text-dark h2"
                     }
                   />
-                  <p> Doctor</p>
+                  <p className="fw-bolder" > Doctor</p>
                 </Button>
               </ButtonGroup>
               <FormGroup className="text-left">
-                <Label for="name">Name</Label>
+                <Label for="name">Name*</Label>
                 <Input
                   type="name"
                   name="displayName"
@@ -175,7 +184,7 @@ const SignUp = () => {
                 )}
               </FormGroup>
               <FormGroup className="text-left">
-                <Label for="email">Email</Label>
+                <Label for="email">Email*</Label>
                 <Input
                   type="text"
                   name="email"
@@ -191,7 +200,7 @@ const SignUp = () => {
                 )}
               </FormGroup>
               <FormGroup className="text-left">
-                <Label for="password">Password</Label>
+                <Label for="password">Password*</Label>
 
                 <Input
                   type="password"
@@ -208,7 +217,7 @@ const SignUp = () => {
                 )}
               </FormGroup>
               <FormGroup className="text-left">
-                <Label for="confirmpassword">Confirm password</Label>
+                <Label for="confirmpassword">Confirm password*</Label>
                 <Input
                   type="password"
                   name="confirmpassword"
@@ -226,11 +235,20 @@ const SignUp = () => {
               {rSelected === 2 && (
                 <div>
                   <FormGroup className="text-left">
-                    <Label for="exampleSelect">Governorates</Label>
-                    <Input type="select" name="select" id="exampleGovernorate">
+                    <Label for="exampleSelect">Governorates*</Label>
+                    <Input
+                      type="select"
+                      name="select"
+                      id="exampleGovernorate"
+                      onChange={handelChanges}
+                      defaultValue="Cairo"
+                    >
                       {governorates.map((item) => {
                         return (
-                          <option key={item.id}>
+                          <option
+                            key={item.id}
+                            value={item.governorate_name_en}
+                          >
                             {item.governorate_name_en}
                           </option>
                         );
@@ -238,23 +256,30 @@ const SignUp = () => {
                     </Input>
                   </FormGroup>
                   <FormGroup className="text-left">
-                    <Label for="exampleSelect">Gender</Label>
-                    <Input type="select" name="select" id="examplegender">
-                      <option>Male</option>
-                      <option>Female</option>
+                    <Label for="exampleSelect">Gender*</Label>
+                    <Input
+                      type="select"
+                      name="selectgender"
+                      id="examplegender"
+                      onChange={handelChanges}
+                      defaultValue="male"
+                    >
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
                     </Input>
                   </FormGroup>
                   <FormGroup className="text-left">
-                    <Label for="exampleNumber">Years of experience</Label>
+                    <Label for="exampleNumber">Years of experience*</Label>
                     <Input
                       type="number"
-                      name="number"
+                      name="numberyear"
                       id="exampleNumber"
                       placeholder="Years"
+                      onChange={handelChanges}
                     />
                   </FormGroup>
                   <FormGroup className="text-left">
-                    <Label for="name">License No.</Label>
+                    <Label for="name">License No*</Label>
                     <Input
                       type="number"
                       name="license"
@@ -263,16 +288,28 @@ const SignUp = () => {
                       onChange={handelChanges}
                     />
                   </FormGroup>
+                  <FormGroup className="text-left">
+                <Label for="spectext">Specialized*</Label>
+                <Input
+                  type="text"
+                  name="spectext"
+                  value={values.spec}
+                  id="spectext"
+                  placeholder="Enter Your Specialized"
+                  onChange={handelChanges}
+                />
+               
+              </FormGroup>
                 </div>
               )}
-              <Button type="submit" className="mb-3">
-                Submit
+              <Button
+                type="submit"
+                className="btn btn-primary rounded-pill mb-3 text-white bg-primary font-weight-bold"
+              >
+                Sign Up
               </Button>
             </Form>
           </div>
-          {/* <div className=" px-0 col-md-6 col-12 ">
-            <img src={image} alt="sign-upimage" className=" w-100" />
-          </div> */}
         </div>
       </div>
     </div>

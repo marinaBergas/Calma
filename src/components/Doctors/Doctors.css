@@ -9,3 +9,8 @@
 .Price{
     display: flex;
 }
+.btn {
+    width: 20% !important;
+    background-color: var(--btn-color )  !important;
+    border-radius: 25px !important;
+}

@@ -15,25 +15,27 @@ function Appointments() {
   const dispatch=useDispatch();
   return (
     <>
-    <div className="row mx-auto mt-5">
-          <div className="col-lg-5 mx-auto col-md-8 col-sm-8 mb-sm-5">
-      <h5 className="text-left align-self-start mt-sm-3 mb-sm-4">
-        Appointments Requests
-      </h5>
-      
-      <div className="page-content page-container" id="page-content">
-        {patient.map((item, index) => {
-          return (
-            <>
-                <div className="appoint_card" key={index}>
-                <div className="row d-flex justify-content-between mx-2 px-3 card-strip">
-                  <div className="left d-flex flex-column">
-                    <h5 className="mb-1">{item.time}</h5>
-                    <p className="text-muted mb-1 sm-text">{item.AppDate}</p>
-                  </div>
-                  <div className="right">
-                    <img src={item.imagePath}></img>
-                  </div>
+      <div className="container px-1 py-5 mx-auto">
+        <div className="row d-flex flex-column align-content-start mt-0">
+          <h5 className="text-left">Appointments Requests</h5>
+          <div className="card">
+            <div className="row d-flex justify-content-between mx-2 px-3 card-strip">
+              <div className="left d-flex flex-column">
+                <h5 className="mb-1">10:00 - 11:00 AM</h5>
+                <p className="text-muted mb-1 sm-text">Monday, August 19</p>
+              </div>
+              <div className="right">
+                <img src="https://i.imgur.com/Mcd6HIg.jpg" className="client-img" ></img>
+              </div>
+            </div>
+            <div className="row d-flex justify-content-between mx-2 px-3 card-strip">
+              <div className="left d-flex flex-column">
+                <h5 className="mb-1">Lindsey Johnson</h5>
+                <p className="text-muted mb-1 sm-text">FIRST VISIT</p>
+              </div>
+              <div className="right d-flex">
+                <div className="mr-2">
+                  <ChatBubbleOutlineOutlinedIcon style={{ fontSize: 40 }} />
                 </div>
                 <div className="d-flex justify-content-between mx-2 px-3 card-strip">
                   <div className="left d-flex flex-column">
