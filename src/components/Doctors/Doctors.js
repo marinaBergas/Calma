@@ -107,7 +107,7 @@ export default function Doctors() {
                       </Button>
                     </div>
                     <div  className=" col-md-6 col-sm-6 ">
-                      <Button  color="primary" className="bg-primary  " >
+                      <Button  color="primary" className="bg-primary" >
                         See More
                       </Button>
                     </div>

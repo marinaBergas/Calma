@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const NavWrapper = styled.div`
   width: 100%;
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,7 +12,7 @@ const NavWrapper = styled.div`
   left: 0;
   height: 60px;
   padding: 0 1rem;
-  background-color: #333;
+  background-color: #0275d8;
   z-index:999;
 `;
 
@@ -55,9 +54,9 @@ const Navbar = ({ toggleMenu }) => {
         >
           <span />
         </BurgerMenu>
-        <p className="ml-5 pt-2 d-none d-lg-inline" style={{ fontSize: "2rem" }}>
+        <h5 className="ml-5 text-white pt-1 d-none d-lg-inline" style={{ fontSize: "1.6rem" }}>
           Hello Dr.Stranger
-        </p>
+        </h5>
       </div>
       <div className="pr-3">
       <Link to={"/"}>

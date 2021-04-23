@@ -43,8 +43,8 @@ const Blogs = (props) => {
 
   return (
     <Container
-      className="justify-content-center align-items-center "
-      fluid={true}
+    className="justify-content-center align-items-center "
+    fluid={true}
     >
       <Row>
         {articles.map((article, id) => {

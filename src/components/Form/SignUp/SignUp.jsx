@@ -137,8 +137,8 @@ const SignUp = () => {
                 <Button
                   className={
                     rSelected === 1
-                      ? "btn btn-dark rounded-circle border border-dark mx-3"
-                      : "btn btn-light rounded-circle border border-dark mx-3"
+                      ? "btn btn-dark rounded-circle border border-dark mx-3 btn_signup"
+                      : "btn btn-light rounded-circle border border-dark mx-3 btn_signup"
                   }
                   onClick={() => setRSelected(1)}
                   active={rSelected === 1}
@@ -153,8 +153,8 @@ const SignUp = () => {
                 <Button
                   className={
                     rSelected === 2
-                      ? "btn btn-dark rounded-circle border border-dark mx-3 "
-                      : "btn btn-light rounded-circle border border-dark mx-3"
+                      ? "btn btn-dark rounded-circle border border-dark mx-3 btn_signup "
+                      : "btn btn-light rounded-circle border border-dark mx-3 btn_signup"
                   }
                   onClick={() => setRSelected(2)}
                   active={rSelected === 2}

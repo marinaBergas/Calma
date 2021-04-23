@@ -13,7 +13,7 @@ const SidebarStyled = styled.div`
   top: 0;
   left: 0;
   width: 80%;
-  background-color: #333;
+  background-color: #0275d8;
   padding: 1rem;
   color: #fff;
   max-width: 300px;
@@ -32,7 +32,7 @@ const SidebarWrapper = styled.div`
 
 const CloseIcon = styled.div`
   position: absolute;
-  top: 0;
+  top: 9%;
   right: 0;
   cursor: pointer;
   padding: 10px 35px 16px 0px;
@@ -83,7 +83,7 @@ const SideBar = ({ show, setIsOpened }) => {
                 <h2 className="mt-3 ">Dr.Stranger</h2>
                 <hr className="hr mt-5" />
               </div>
-              <div className="links d-flex mt-5 flex-column align-items-start justify-content-center">
+              <div className="links d-flex mt-2 flex-column align-items-start justify-content-center">
                 {Sidedata.map((item, index) => {
                   return (
                     <li key={index} className={item.cName}>

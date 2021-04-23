@@ -5,16 +5,16 @@ body {
   background-color: #d1c4e9;
   background-repeat: no-repeat;
 }
-
-.appoint_card {
+.appoint_container{
+  box-shadow: 2px 2px 10px #DADADA;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 400px;
+}
+.card_appoint {
   box-shadow: 2px 2px 10px #dadada;
   border-radius: 5px;
-}
-
-@media screen and (max-width: 768px) {
-  .card {
-    width: 350px;
-  }
+  border: 2px solid #dadada;
 }
 
 .card-strip {
@@ -45,7 +45,7 @@ body {
 .text-muted {
   color: #bdbdbd !important;
 }
-.btn {
+.btn_appoint {
   height: 55px;
   margin: 20px 0px;
   font-weight: bold;

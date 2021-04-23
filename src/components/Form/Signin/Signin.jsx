@@ -82,12 +82,12 @@ const Signin = () => {
 
               <Button
                 type="submit"
-                className=" btn-primary rounded-pill  text-white bg-primary font-weight-bold"
+                className="btn-primary rounded-pill  text-white bg-primary font-weight-bold"
               >
                 sign in
               </Button>
               <div
-                className=" d-block goole-btn p-3 text-white bg-primary font-weight-bold mt-5 w-50"
+                className="d-block goole-btn p-3 text-white bg-primary font-weight-bold mt-5 w-50"
                 onClick={handleSignInWithGoogle}
               >
                 sign in with{" "}

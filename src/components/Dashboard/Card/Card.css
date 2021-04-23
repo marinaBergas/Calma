@@ -12,12 +12,3 @@
   box-shadow: 4px 4px 20px #dadada;
   transition: 0.3s linear all;
 }
-
-@media screen and(max-width: 768px){
-  .card-counter span{
-    color: red;
-  }
-  .card-Container {
-    margin-bottom: 500px;
-  }
-}
