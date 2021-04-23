@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Carousel,
   CarouselItem,
@@ -12,38 +12,50 @@ import './Doctors.css'
 import { Media } from 'reactstrap';
 import Rating from '@material-ui/lab/Rating';
 import {Button} from 'reactstrap';
-const items = [
-  {
-    id: 1,
-    altText: 'Slide 1',
-    caption: 'Slide 1'
-  },
-  {
-    id: 2,
-    altText: 'Slide 2',
-    caption: 'Slide 2'
-  },
-  {
-    id: 3,
-    altText: 'Slide 3',
-    caption: 'Slide 3'
-  }
-];
+import { db } from "../../../firebase/utils";
+// const items = [
+//   {
+//     id: 1,
+//     altText: 'Slide 1',
+//     caption: 'Slide 1'
+//   },
+//   {
+//     id: 2,
+//     altText: 'Slide 2',
+//     caption: 'Slide 2'
+//   },
+//   {
+//     id: 3,
+//     altText: 'Slide 3',
+//     caption: 'Slide 3'
+//   }
+// ];
 
 const DoctorSection = (props) => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const [data, setdata] = useState([]);
+  useEffect(() => {
+    const unsubscribe = db.collection("doctors").onSnapshot((querySnapshot) => {
+      const documents = querySnapshot.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
+      console.log("documents",documents);
+      setdata(documents);
+    });
+    return unsubscribe;
+  }, []);
 
   const next = () => {
     if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    const nextIndex = activeIndex === data.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   }
 
   const previous = () => {
     if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === 0 ? data.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   }
 
@@ -52,9 +64,10 @@ const DoctorSection = (props) => {
     setActiveIndex(newIndex);
   }
 
-  const slides = items.map((item) => {
+  const slides = data.map((item) => {
     
     return (
+      
       <CarouselItem
         className="custom-tag p-0 m-0"
         tag="div"
@@ -64,9 +77,9 @@ const DoctorSection = (props) => {
       >        
         <Media className=" align-items-center justify-content-center  p-5  flex-wrap">
           <Media left className="col-md-4 col-sm-12 ml-0">
-            <Media object src={photo} alt="Generic placeholder image" className="w-100 " /></Media>
+            <Media object src={item.photoURL} alt="Generic placeholder image" className="w-100 " /></Media>
             <Media body className="p-5 text-left col-md-6 col-sm-10 ">
-              <Media heading className="ml-4">Media heading</Media>
+              <Media heading className="ml-4">{item.displayName}</Media>
               <Media  className="ml-4">  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</Media>
                   <div className="py-5 text-left">
                    <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
@@ -107,7 +120,7 @@ const DoctorSection = (props) => {
         next={next}
         previous={previous}
       >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+        <CarouselIndicators items={data} activeIndex={activeIndex} onClickHandler={goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} className="p-5 justify-content-between " />
         <CarouselControl direction="next" directionText="Next" onClickHandler={next}  className="p-5 justify-content-flex-end"/>

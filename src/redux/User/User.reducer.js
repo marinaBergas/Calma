@@ -12,9 +12,7 @@ const userReducer  = (state=INITIAL_STATE,action)=>{
         case userType.SET_CURRENT_USER :
             return {
                 ...state , currentUser : action.payload
-            }
-      
-            
+            }     
         case userType.SIGN_IN_SUCCESS:    
         return {
             ...state , signInSuccess : action.payload

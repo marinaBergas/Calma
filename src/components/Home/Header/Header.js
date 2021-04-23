@@ -11,6 +11,7 @@ const mapState = ({user}) => ({
   });
 function Header() {
     const {signInSuccess,currentUser} = useSelector(mapState);
+    console.log("grfgv",currentUser)
 
     return (
           <>
@@ -19,6 +20,7 @@ function Header() {
 			          {/* <h1 key={1} className="mb-4 text-left text-white">Be Calm With Us </h1> */}
               </div>
             </div> 
+            
             {/* <div className="header-image col-12 col-md-4 col-lg-6 col-xl-7">
 			      	<img src={image} className="img-fluid p-0"/>
 		      	</div>  */}
