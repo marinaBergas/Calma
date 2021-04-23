@@ -1,21 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card/Card";
-import Sidebar from "./Sidebar/Sidebar";
 import Appointments from "./Appointments/Appointments";
-
-import WebNavbar from "../Navbar/Navbar";
 import { CardData } from "./Card/Card-data";
 import AllAppoints from "./All-Appointments/AllAppoints";
+import SideBar from "./Sidebartwo/SideBar";
+import Background from "./Sidebartwo/Background";
+import Navbar from "./Sidebartwo/Navbar";
 
 function Dashboard() {
+  const [isOpened, setIsOpened] = useState(true);
+
   return (
-    <>
-      <Sidebar />
-      <div className="container">
+    <div className="blog_background">
+      <div className="container ">
         <div className="row">
+          <Background setIsOpened={setIsOpened} show={isOpened} />
+          <Navbar toggleMenu={setIsOpened} />
+          <SideBar show={isOpened} setIsOpened={setIsOpened} />
+        </div>
+        <div className="row text-center mx-auto mt-5 align-items-md-center justify-content-md-center">
           {CardData.map((item, index) => {
             return (
-              <div className="col-lg-3 col-sm-6 ml-5 col-md-6 mx-auto">
+              <div className="col-lg-3 mt-5 col-md-6 mx-auto text-center col-sm-6 ">
                 <div>
                   <Card
                     key={index}
@@ -28,16 +34,10 @@ function Dashboard() {
             );
           })}
         </div>
-        <div className="row ml-5">
-          <div className="col-lg-6">
-            <Appointments />
-          </div>
-          <div className="col-lg-5 ml-5">
-            <AllAppoints />
-          </div>
-        </div>
+            <Appointments/>
       </div>
-    </>
+    <div/>
+    </div>
   );
 }
 

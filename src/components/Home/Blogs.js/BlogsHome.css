@@ -7,7 +7,7 @@
 
 } */
 
-.card:hover {
+.card_blog:hover {
     transform: scale(1.2) ;
     z-index:1;
 }

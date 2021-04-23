@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {Container, Row } from 'reactstrap';
 import './Privace.css'
 import Footer from '../Footer/Footer';
+import WebNavbar from '../Navbar/Navbar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +36,7 @@ const Privace = () => {
 
   return (
     <>
+      <WebNavbar/>
     <Container className="privace-container  justifiy-content-center " >
         <Row className="flex-wrap text-left">
             <div className="col-8">
