@@ -1,0 +1,47 @@
+
+
+.hr{   
+    border: 2px solid white;
+
+}
+
+.docImg{
+    border-radius: 50%;
+    width: 50%;
+  height: auto;
+}
+
+  
+
+
+  .nav-text {
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+  }
+
+  
+.links li:last-child{
+  margin-top: auto;
+}
+  .nav-text a {
+    text-decoration: none;
+    list-style: none;
+    color: #f5f5f5;
+    font-size: 22px;
+    width: 100%;
+    
+    padding: 3px 16px;
+    border-radius: 4px;
+   
+  }
+  
+  .nav-text a:hover {
+    text-decoration: none;
+    list-style: none;
+    background-color: #1a83ff;
+  }
+  
+  .nav-menu-items {
+    width: 100%;
+  }

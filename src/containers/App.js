@@ -50,7 +50,6 @@ const App=props => {
 
     <div className="App">
       <Router>
-        <WebNavbar/>
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/blogs" component={Blogs}/>
