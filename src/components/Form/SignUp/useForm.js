@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { userSignUp } from "../../../redux/User/User.action";
-
 import { auth, handleUserProfile } from "../../../firebase/utils";
 import Validation from "./Validation";
+import { db, storage } from "../../../firebase/utils";
 const initialState = {
   displayName: "",
   email: "",
@@ -13,18 +11,36 @@ const initialState = {
   selectgender: "male",
   numberyear: "",
   license: "",
-  spectext:"",
+  spectext: "",
+  photo: "",
 };
 const useForm = () => {
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
+  const [progres, setprogres] = useState(0);
   const handelChanges = (e) => {
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     });
   };
-
+  const uploadimage = (e) => {
+    const file = e.target.files[0];
+    const storageRef = storage.ref(file.name);
+    storageRef.put(file).on(
+      "state_changed",
+      (snap) => {
+        let percent = (snap.bytesTransferred / snap.totalBytes) * 180;
+        setprogres(percent);
+      },
+      (err) => console.log(err),
+      async () => {
+        const url = await storageRef.getDownloadURL();
+        await setValues({ ...values, photo: url });
+        setprogres(0);
+      }
+    );
+  };
   const handelSubmit = async (e, rSelected) => {
     e.preventDefault();
     setErrors(Validation(values));
@@ -37,6 +53,8 @@ const useForm = () => {
       selectgender,
       numberyear,
       license,
+      spectext,
+      photo,
     } = values;
     try {
       const { user } = await auth.createUserWithEmailAndPassword(
@@ -50,13 +68,13 @@ const useForm = () => {
         selectgender,
         numberyear,
         license,
+        spectext,
+        photo,
       });
       setValues({ ...initialState });
     } catch (error) {}
     console.log(errors);
-    // useDispatch(userSignUp({ email, password, displayName, confirmpassword }));
   };
-
-  return { handelChanges, handelSubmit, errors, values };
+  return { handelChanges, handelSubmit, errors, values, uploadimage, progres };
 };
 export default useForm;
