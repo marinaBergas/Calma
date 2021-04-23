@@ -57,7 +57,7 @@ export default function Doctors() {
       
         {data.map((item) => {
           return (
-            <Card className={classes.root} className="col-4" mx={1}>
+            <Card className={classes.root} className="col-4 " mx={1}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
@@ -99,19 +99,19 @@ export default function Doctors() {
                   />
                 </div>
               </CardActionArea>
-              <CardActions>
-              <div className="row d-flex flex-nowrap">
-                    <div className=" col-md-6 col-sm-6 ">
-                      <Button  color="primary" className="bg-primary my-2 p-0 mx-4 w-100">
-                         Book Now
+              <CardActions >
+              <div  className="row">
+                    <div className=" col-md-6 col-sm-6 ml-0 ">
+                    <Button  className="  gen_btn text-white bg-primary ml-0 " >
+                        BOOK NOW
                       </Button>
                     </div>
-                    <div  className=" col-md-6 col-sm-6 ">
-                      <Button  color="primary" className="bg-primary  " >
+                    <div  className=" col-md-6 col-sm-6 ml-0">
+                      <Button  className=" gen_btn text-white bg-primary  ml-0" >
                         See More
                       </Button>
                     </div>
-                  </div>
+              </div>
               </CardActions>
             </Card>
           );

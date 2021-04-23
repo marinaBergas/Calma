@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import image from "../../../Assets/Images/calm.jpg";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Signin.css";
 import { useEffect } from "react";
 import {
@@ -11,6 +11,7 @@ import {
   userSignIn,
   userSignOut,
 } from "../../../redux/User/User.action";
+
 const mapState = ({ user }) => ({
   currentUser: user.currentUser,
   signInSuccess: user.signInSuccess,
@@ -104,9 +105,7 @@ const Signin = () => {
               </div>
               <p>
                 Don't have any account?{" "}
-                <a href="#" class="link-primary">
-                  Sign Up
-                </a>
+        <Link to ="/register/signup">Sign Up</Link>
               </p>
             </Form>
           </div>
