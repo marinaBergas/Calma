@@ -36,7 +36,7 @@ const CentersHome = (props) => {
       <>
       {centers.map((center) => {
             return (
-                <div className="mx-4 p-0 col-md-3 col-sm-8 centers-card  " key={center.id}>
+                <div className="mx-4 p-0 col-md-3 col-xs-8 centers-card  " key={center.id}>
                   <Center
                     title={center.title}
                     secondTitle={center.secondTitle}

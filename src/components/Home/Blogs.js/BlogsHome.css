@@ -14,3 +14,8 @@
 .card{
     transition: transform .2s;
 }
+.btn-blogs{
+    width: 80% !important;
+    background-color: var(--btn-color )  !important;
+    border-radius: 5rem !important;
+}

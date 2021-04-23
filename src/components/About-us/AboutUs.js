@@ -25,8 +25,8 @@ const AboutUs = () => {
 
             <Container fluid={true}  className="Calma-description-container  px-0 py-5 ">
                 <Row className="  justify-content-center align-items-center">
-                     <Media className=" align-items-center justify-content-center  px-5  flex-wrap">
-                        <Media body className="p-5 text-left col-md-6 col-sm-10 ">
+                     <Media className=" align-items-center justify-content-center  px-3  flex-wrap">
+                        <Media body className="py-5 text-left col-md-6 col-sm-10 ">
                             <Media heading className="ml-4">Who We Are ?</Media>
                             <Media  className="ml-4 py-3 text-secondary">
                             <p className=" text-left text-secondary h6 py-3">Calma site established in 2021 for psychotherapy and addiction treatment,  you can join us at any time and anywhere. We are at your service, Calma's certified professionals are here to guide you through your problems whether they're treated individually or as part of a couple.</p>
@@ -60,7 +60,7 @@ const AboutUs = () => {
             </Container>
             <Container fluid={true}  className="mission-container  px-0 py-5  align-items-center justify-content-center ">
                 <Row>
-                    <Media className=" align-items-center justify-content-center  px-5  flex-wrap">
+                    <Media className=" align-items-center justify-content-center  px-3  flex-wrap">
                        <Media left className="col-md-4 col-sm-12 ml-0">
                        <Media object src={missionimg} alt="Generic placeholder image" className="w-100 " /></Media>
                             <Media body className="p-5 text-left col-md-6 col-sm-10 ">
@@ -74,7 +74,7 @@ const AboutUs = () => {
             </Container>
             <Container fluid={true}  className="vision-container  px-0 py-5  align-items-center justify-content-center ">
                 <Row>
-                    <Media className=" align-items-center justify-content-center  px-5  flex-wrap">
+                    <Media className=" align-items-center justify-content-center  px-3  flex-wrap">
                         <Media body className="p-5 text-left col-md-6 col-sm-10 ">
                             <Media heading className="ml-4">OUR VISION</Media>
                             <Media  className="ml-4 py-3 text-secondary">

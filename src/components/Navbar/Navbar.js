@@ -78,7 +78,7 @@ const WebNavbar = (props) => {
               </NavLink>]}
 
             {(!currentUser && !signInSuccess)&& [ 
-              <DropdownToggle key={1} nav caret className=" NavbarLinks px-3">
+              <DropdownToggle key={1} nav caret className=" NavbarLinks pr-3">
                 Register
               </DropdownToggle>,
               <DropdownMenu key={2} right>

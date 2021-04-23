@@ -5,9 +5,15 @@ import Artical1 from "../../../Assets/Images/Articles/A1.jpg";
 import Artical2 from "../../../Assets/Images/Articles/A2.jpg";
 import Artical3 from "../../../Assets/Images/Articles/A3.jpg";
 import Blog from "../../Blogs/BlogDetails/BlogDetails";
+import { useHistory } from "react-router";
+import {Button} from 'reactstrap';
 
 
 const BlogsHome = (props) => {
+  const history = useHistory();
+  const handleSubmit=()=>{
+    history.push("/blogs");
+  }
   const articles = [
     {
       id: 1,
@@ -41,9 +47,10 @@ const BlogsHome = (props) => {
   ];
   return (
     <>
+    <div className="row justify-content-center align-items-center">
     {articles.map((article) => {
           return (
-              <div className="mx-4 p-0 col-md-3 col-sm-8 blogs-card  " key={article.id}>
+              <div className="w-100 mx-4 p-0 col-md-3 col-xs-8 blogs-card  " key={article.id}>
                 <Blog
                   title={article.title}
                   description={article.description}
@@ -54,6 +61,12 @@ const BlogsHome = (props) => {
               </div>
           );
         })}
+        </div>
+        <div className="row justify-content-center align-items-center mt-5">
+          <div className="col-md-3 col-xs-6">
+            <Button  color="primary" className=" bg-primary  btn-blogs my-2  text-uppercase mx-4 "onClick={handleSubmit}>see more</Button>
+          </div>
+        </div>
     </>
   );
 };

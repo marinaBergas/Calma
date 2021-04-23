@@ -67,7 +67,7 @@ export default function Doctors() {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h1">
-                    Zein El Abdeen Sanhoury
+                    {item.displayName}
                   </Typography>
                   <Typography gutterBottom variant="h6" component="p">
                     Clinical Psychotherapist

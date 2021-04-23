@@ -26,6 +26,7 @@ import Artical9 from "../../Assets/Images/Articles/A9.jpg";
 import BlogArticle from "./BlogDetails/BlogArticle";
 import { useState } from "react";
 import Footer from "../Footer/Footer";
+import WebNavbar from "../Navbar/Navbar";
 
 
 
@@ -118,6 +119,7 @@ const Blogs = (props) => {
 
   return (
     <>
+    <WebNavbar/>
     <Container fluid={true} >
       <Row className="justify-content-center align-items-center my-5">
         {articles.map((article) => {

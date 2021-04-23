@@ -10,7 +10,7 @@ const HappyClient = () => {
     return (
         <>
         <Media className=" align-items-center justify-content-center   flex-wrap">
-        <Media body className=" text-left col-md-6 col-sm-10 ">
+        <Media body className=" text-left col-md-6 col-xs-10 ">
                <Media heading className="ml-4">Happy Patients</Media>
                <Media  className="ml-4 py-3 text-secondary">
                   <p> We create healthy minds free of depression and anxietys ,Therapy helps in many different areas of sexual wellness. Whether you're experiencing sexual pain, intimacy concerns or low desire and could use some guidance; </p>
@@ -39,8 +39,8 @@ const HappyClient = () => {
             </Media>
          
 
-            <Media left className="col-md-4 col-sm-12 ml-0">
-               <Media object src={photo} alt="Generic placeholder image" className="w-100 px-5" /></Media>
+            <Media left className="col-md-4 col-xs-12 ml-0">
+               <Media object src={photo} alt="Generic placeholder image" className="w-100  image-fluid" /></Media>
         </Media>
         </>
     )

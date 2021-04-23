@@ -5,6 +5,7 @@ import { FacebookIcon, TwitterIcon } from "react-share";
 import Blog from './BlogDetails';
 
 import { useSelector } from 'react-redux';
+import WebNavbar from '../../Navbar/Navbar';
 const mapState = ({blog}) => ({
   currentBlog:blog.currentBlog,
 });
@@ -14,6 +15,7 @@ const BlogArticle =(props)=>{
 
     return(
     <>
+    <WebNavbar/>
     <Container fluid={true} className="px-5 blogs-container my-5">
       <Row>
         <div className="col-12  ">
@@ -31,17 +33,17 @@ const BlogArticle =(props)=>{
       </Row>
     </Container>
     <Container >
-      <Row>
+      <Row className="m-2">
       <p className="h1 text-left py-3">{currentBlog.description}</p>
       </Row>
     </Container>
     <Container >
-      <Row>
+      <Row className="m-2">
       <p className="h1 text-left py-3">{currentBlog.paragraph}</p>
       </Row>
     </Container>
     <Container className="pb-5" >
-      <Row>
+      <Row className="m-2">
       <FacebookShareButton
         url={"http://www.optimumep.com.au/blog"}
         hashtag={"#hashtag"}
@@ -56,7 +58,7 @@ const BlogArticle =(props)=>{
         title={"test"}
         url={"http://www.optimumep.com.au/blog"}
         hashtags={["hashtag1", "hashtag2"]}
-        className="bg-white py-3 px-0 mx-3"
+        className="bg-white py-3 px-0 "
       >
         <TwitterIcon  className="text-info mr-3 "  size={32} round />
         share on Twitter

@@ -18,7 +18,7 @@ function Header() {
           <>
             <WebNavbar/>
             <div className="header-text text-center text-md-left  my-5 py-5">
-              <div className="header-content px-5 col-lg-12">
+              <div className="header-content px-5 col-xs-12">
 			          {/* <h1 key={1} className="mb-4 text-left text-white">Be Calm With Us </h1> */}
               </div>
             </div> 
