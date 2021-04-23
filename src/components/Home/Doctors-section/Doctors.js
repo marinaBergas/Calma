@@ -86,12 +86,12 @@ const DoctorSection = (props) => {
                   </div>
                   <div className="row d-flex flex-nowrap">
                     <div className=" col-md-6 col-sm-6 ">
-                      <Button  color="primary" className="bg-primary my-2 p-0 mx-4 w-100">
+                      <Button  color="primary" className=" bg-primary my-2 p-0 mx-4 w-100">
                          Book Now
                       </Button>
                     </div>
                     <div  className=" col-md-6 col-sm-6 ">
-                      <Button  color="primary" className="bg-primary my-2 p-0 mx-4  doctor-btn w-100 " >
+                      <Button  color="primary" className=" bg-primary my-2 p-0 mx-4  w-100 " >
                         See More
                       </Button>
                     </div>

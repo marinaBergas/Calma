@@ -1,8 +1,8 @@
-
- 
-   .MuiSvgIcon-root{
-      font-size: 2.5rem !important;
-   }
-   .Calma-description-container,.mission-container ,.vision-container {
-      background-color: var( --back-ground )  !important;
-    }
+.MuiSvgIcon-root {
+  font-size: 2.5rem !important;
+}
+.Calma-description-container,
+.mission-container,
+.vision-container {
+  background-color: var(--back-ground) !important;
+}

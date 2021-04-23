@@ -1,11 +1,11 @@
 import React from "react";
 import "./AllAppoints.css";
-function AllAppoints(props) {
+export const AllAppoints = (props) =>{
   console.log(props.appoint,"props")
   return (
     <>
       <div className="row d-flex flex-column align-content-center">
-        <h5 className="text-left mt-sm-3 mb-sm-4 mt-5 ">Appointments</h5>
+        <h5 className="text-left mt-sm-3 mb-sm-4 mb-xs-4 my-5 ">Appointments</h5>
         <div className="page-content page-container" id="page-content">
     
           {props.appoint.map((item, index) => {

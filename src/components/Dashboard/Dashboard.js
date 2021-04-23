@@ -34,9 +34,7 @@ function Dashboard() {
             );
           })}
         </div>
-        
-            <Appointments />
-          
+            <Appointments/>
       </div>
     <div/>
     </div>
