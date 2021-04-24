@@ -24,8 +24,8 @@ body {
 }
 
 .client-img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     cursor: pointer
 }
@@ -50,4 +50,6 @@ body {
   margin: 20px 0px;
   font-weight: bold;
   letter-spacing: 1px;
+  background-color: #5cb85c;
+  color: #5cb85c;
 }
