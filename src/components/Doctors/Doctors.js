@@ -107,7 +107,7 @@ export default function Doctors() {
               <CardActions>
                 <div className="row text-left">
                   <div className=" col-lg-10 col-md-12 ml-0 mr-2 p-0 ">
-                    <Button className="  gen_btn text-white bg-primary ml-0 my-2 btn-lg">
+                    <Button className="  gen_btn text-white bg-primary ml-0 my-2 btn-lg" onClick={BookNow}>
                       BOOK NOW
                     </Button>
                   </div>
