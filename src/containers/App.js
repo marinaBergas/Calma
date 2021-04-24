@@ -18,7 +18,7 @@ import { auth, handleUserProfile } from '../firebase/utils';
 import { useEffect } from 'react';
 import {setCurrentUser} from '../redux/User/User.action';
 import {useDispatch} from 'react-redux'
-import Admin from '../components/Admin/Admin';
+
 import Messenger from '../components/Dashboard/Messenger';
 import AboutUs from '../components/About-us/AboutUs';
 import Blog from '../components/Blogs/BlogDetails/BlogDetails';
@@ -52,7 +52,7 @@ const App=props => {
 
     <div className="App">
       <Router>
-    
+    <WebNavbar/>
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/blogs" component={Blogs}/>
@@ -64,7 +64,7 @@ const App=props => {
             <Route path="/dashboard/Schedule" exact component={Schedule}/>
             <Route path="/dashboard/Messenger" exact component={Messenger}/>
             <Route path="/dashboard/Patients" exact component={Patients}/>
-            <Route path="/admin" exact component={Admin}/>
+          
             <Route path="/Blog" exact component={BlogArticle}/>
             <Route path="/privace" exact component={Privace}/>
           </Switch>
