@@ -27,19 +27,19 @@ const BlogArticle =(props)=>{
     <Container fluid={true}>
       <Row>
       <div className="col-12">
-        <h2 className="h1 text-left pt-5 pb-3 px-4">{currentBlog.title}</h2>
+        <h3 className="h1 text-left pt-5 pb-3 px-4">{currentBlog.title}</h3>
         <hr/>
       </div>
       </Row>
     </Container>
     <Container >
       <Row className="m-2">
-      <p className="h1 text-left py-3">{currentBlog.description}</p>
+      <p className=" text-left py-3">{currentBlog.description}</p>
       </Row>
     </Container>
     <Container >
       <Row className="m-2">
-      <p className="h1 text-left py-3">{currentBlog.paragraph}</p>
+      <p className=" text-left py-3">{currentBlog.paragraph}</p>
       </Row>
     </Container>
     <Container className="pb-5" >
@@ -48,7 +48,7 @@ const BlogArticle =(props)=>{
         url={"http://www.optimumep.com.au/blog"}
         hashtag={"#hashtag"}
         description={"aiueo"}
-        className="Demo__some-network__share-button bg-white py-3 px-0"
+        className="Demo__some-network__share-button bg-white py-3 px-0 mr-3"
       >
         
        <FacebookIcon className="text-white mr-3 "  size={32} round />

@@ -21,8 +21,8 @@ function Home(props) {
             <Header {...props} />
           </Row>
         </Container>
-        <Container fluid={true} className="Doctors-container  p-0">
-          <Row className=" doctor-container ">
+        <Container fluid={true} className="Doctors-container  pt-5">
+          <Row className=" doctor-container mx-0">
             <div className="col-sm-12 mx-0 ">
               <DoctorSection />
             </div>
@@ -37,10 +37,8 @@ function Home(props) {
           </Row>
         </Container>
 
-        <Container fluid={true} className="Blogs-container  px-0 ">
-          <Row className=" blog-container justify-content-center mx-0 ">
-            <CentersHome />
-          </Row>
+        <Container fluid={true} className="Centers-container  px-0 ">
+              <CentersHome/>
         </Container>
         <Container fluid={true} className="px-0 ">
           <Row className=" justify-content-center mx-0">

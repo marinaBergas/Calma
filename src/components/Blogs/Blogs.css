@@ -10,10 +10,13 @@
     position: relative;
 
     } */
-    .Blogs-container{
+    /* .Blogs-container{
         margin-top: 200px !important;
         position: absolute;
         top:50%;
         right:0;
-    } 
+    }  */
+    .Blogs-cards-container{
+        margin-top: 8%;
+    }
   
