@@ -10,13 +10,13 @@ const Messenger = () => {
   if (!localStorage.getItem('username')) return <LoginForm />;
   return (
     <>
-    <WebNavbar />
+    {/* <WebNavbar /> */}
  
     <ChatEngine 
       padding-top="10rem"
       height="100vh"
       projectID="db336757-f2cc-4004-8a8d-85d4069e021f"
-      userName="MeshrafaAzzam"
+      userName="Esraa"
       userSecret="1234567Aa"
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
       onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
