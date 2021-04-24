@@ -46,3 +46,6 @@
   margin-left: 0;
   margin-right: 0;
 }
+.messenger-container{
+  background-color: var( --back-ground )  !important;
+}

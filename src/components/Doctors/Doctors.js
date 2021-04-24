@@ -18,11 +18,13 @@ import { withStyles, createStyles } from "@material-ui/core/styles";
 import MoneyIcon from "@material-ui/icons/Money";
 import { db } from "../../firebase/utils";
 import Footer from "../Footer/Footer";
+import { useHistory } from "react-router";
 // const [state, setstate] = useState(initialState)
 /* function Doctors() {
     return (
         <div>
       */
+       
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -39,8 +41,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Doctors() {
+  const history = useHistory();
   const classes = useStyles();
   const [data, setdata] = useState([]);
+  const BookNow=()=>{
+    history.push("/book");
+  }
   useEffect(() => {
     const unsubscribe = db.collection("doctors").onSnapshot((querySnapshot) => {
       const documents = querySnapshot.docs.map((doc) => {
@@ -56,7 +62,7 @@ export default function Doctors() {
     
     <div className="container-fluid px-0 pt-2">
     <WebNavbar  />
-      <h2 className="text-dark doctor-text">Doctors</h2>
+      <h2 className="text-dark doctor-text ">Doctors</h2>
       <div className="row justify-content-center mt-5 mx-0">
         {data.map((item,index) => {
           return (
@@ -104,14 +110,14 @@ export default function Doctors() {
                   />
                 </div>
               </CardActionArea>
-              <CardActions>
-                <div className="row text-left">
-                  <div className=" col-lg-10 col-md-12 ml-0 mr-2 p-0 ">
-                    <Button className="  gen_btn text-white bg-primary ml-0 my-2 btn-lg" onClick={BookNow}>
+              <CardActions >
+                <div className="row ">
+                  <div className=" col-lg-10 col-md-6 col-xs-12 ml-0  p-0 ">
+                    <Button className="  gen_btn text-white bg-primary mr-2 my-2 " onClick={BookNow}>
                       BOOK NOW
                     </Button>
                   </div>
-                  <div className=" col-lg-10 col-md-12 ml-0 p-0">
+                  <div className=" col-lg-10 col-md-6 col-xs-2 ml-0 p-0">
                     <Button className=" gen_btn text-white bg-primary  ml-0 my-2">
                       See More
                     </Button>

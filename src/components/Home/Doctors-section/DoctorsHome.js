@@ -46,15 +46,19 @@ const DoctorSection = (props) => {
   }
 
   const goToIndex = (newIndex) => {
+    
     if (animating) return;
     setActiveIndex(newIndex);
   }
   const handleSubmit=()=>{
     history.push("/doctors");
   }
-
+  
+    const BookNow=()=>{
+      history.push("/book");
+    }
   const slides = data.map((item) => {
-    
+  
     return (
       
       <CarouselItem
@@ -77,7 +81,7 @@ const DoctorSection = (props) => {
                   </div>
                   <div className="row d-flex">
                     <div className=" col-md-6 col-xs-12 ">
-                      <Button  color="primary" className=" bg-primary btn-doctor my-2   w-100 text-uppercase">
+                      <Button  color="primary" className=" bg-primary btn-doctor my-2   w-100 text-uppercase" onClick={BookNow}>
                          book now
                       </Button>
                     </div>

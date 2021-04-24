@@ -27,6 +27,7 @@ import Privace from '../components/Privace/Privace';
 import { Navbar } from 'reactstrap';
 import SideBar from '../components/Dashboard/Sidebartwo/SideBar';
 import Dashboard from '../components/Dashboard/Dashboard';
+import CreditForm from '../components/Schedule/CreditForm';
 
 //const authListener=null;
 const App=props => {
@@ -66,6 +67,7 @@ const App=props => {
           
             <Route path="/Blog" exact component={BlogArticle}/>
             <Route path="/privace" exact component={Privace}/>
+            <Route path="/book" exact component={CreditForm} />
           </Switch>
           
       </Router>
