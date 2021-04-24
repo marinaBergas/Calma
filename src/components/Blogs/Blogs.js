@@ -7,7 +7,7 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
-// import './Blogs.css';
+import './Blogs.css';
 import photo from "../../Assets/Images/bg-header.jpg";
 import photo2 from "../../Assets/Images/calm.jpg";
 import photo3 from "../../Assets/Images/header.jpeg";
@@ -120,7 +120,7 @@ const Blogs = (props) => {
   return (
     <>
     <WebNavbar/>
-    <Container fluid={true} >
+    <Container fluid={true} className="Blogs-cards-container">
       <Row className="justify-content-center align-items-center my-5">
         {articles.map((article) => {
           return (

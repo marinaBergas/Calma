@@ -6,7 +6,7 @@ import Artical2 from "../../../Assets/Images/Articles/A2.jpg";
 import Artical3 from "../../../Assets/Images/Articles/A3.jpg";
 import Blog from "../../Blogs/BlogDetails/BlogDetails";
 import { useHistory } from "react-router";
-import {Button} from 'reactstrap';
+import {Button, Row} from 'reactstrap';
 
 
 const BlogsHome = (props) => {
@@ -47,6 +47,10 @@ const BlogsHome = (props) => {
   ];
   return (
     <>
+     <Row className=" justify-content-center mx-0 ">
+
+<h2 className="mb-5" >Calma Blogs</h2>
+</Row>
     <div className="row justify-content-center align-items-center mx-0">
     {articles.map((article) => {
           return (

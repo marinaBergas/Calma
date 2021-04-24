@@ -27,7 +27,7 @@ export const handleUserProfile = async (userAuth, usertype, additionalData) => {
     const { email } = userAuth;
     const timesTamp = new Date();
     const userRoles = ['user'];
-  
+    // const userRoles = email === "mera.saber@yahoo.com" ? ["user", "admin"] : "user";
     try {
       await userRef.set({
         email,
@@ -42,14 +42,14 @@ export const handleUserProfile = async (userAuth, usertype, additionalData) => {
   return userRef;
 };
 
-export const checkUserIsAdmin = (currentUser) => {
-  if (!currentUser || !Array.isArray(currentUser.userRoles)) {
-    return false;
-  }
-  const { userRoles } = currentUser;
-  if (userRoles.includes("admin")) {
-    return true;
-  } else {
-    return false;
-  }
-};
+// export const checkUserIsAdmin = (currentUser) => {
+//   if (!currentUser || !Array.isArray(currentUser.userRoles)) {
+//     return false;
+//   }
+//   const { userRoles } = currentUser;
+//   if (userRoles.includes("admin")) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };

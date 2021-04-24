@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth, handleUserProfile } from "../../../firebase/utils";
 import Validation from "./Validation";
 import { db, storage } from "../../../firebase/utils";
+import { useHistory } from "react-router";
 const initialState = {
   displayName: "",
   email: "",
@@ -18,6 +19,7 @@ const useForm = () => {
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [progres, setprogres] = useState(0);
+  const history =useHistory();
   const handelChanges = (e) => {
     setValues({
       ...values,
@@ -43,8 +45,12 @@ const useForm = () => {
   };
   const handelSubmit = async (e, rSelected) => {
     e.preventDefault();
+    
     setErrors(Validation(values));
+    if(Object.keys(Validation(values)).length===0)
+    {
 
+     
     const {
       displayName,
       email,
@@ -74,6 +80,11 @@ const useForm = () => {
       setValues({ ...initialState });
     } catch (error) {}
     console.log(errors);
+    history.push("/")
+  }
+  else{
+    console.log("nosubmit")
+  }
   };
   return { handelChanges, handelSubmit, errors, values, uploadimage, progres };
 };

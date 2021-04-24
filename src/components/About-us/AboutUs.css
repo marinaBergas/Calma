@@ -1,6 +1,31 @@
 .MuiSvgIcon-root {
   font-size: 2.5rem !important;
+
 }
+.AboutUs_span{
+  margin-left:10px !important; 
+}
+.about_text::after{
+  content: "";
+  width: 100px;
+  border-bottom: 3px solid #0275d8;
+  position: absolute;
+  top: 50px;
+  left: 0%;
+
+}
+.about_text{
+  position: relative;
+}
+
+@media (max-width: 576px) {
+.MuiSvgIcon-root {
+  
+     font-weight: 300 !important;
+     font-size:1.5rem !important ;
+   } 
+  }
+  
 .Calma-description-container,
 .mission-container,
 .vision-container {

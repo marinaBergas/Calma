@@ -16,22 +16,22 @@ const HappyClient = () => {
                   <p> We create healthy minds free of depression and anxietys ,Therapy helps in many different areas of sexual wellness. Whether you're experiencing sexual pain, intimacy concerns or low desire and could use some guidance; </p>
                </Media>
                <Media >
-            <ul className="ml-4">
+            <ul className="ml-2">
                         <li className=" text-left">
-                            <SpaIcon className="text-primary text-left h1" />
-                            <span className="text-secondary" >Better life decisions. </span>
+                            <SpaIcon className="happyClient_icons text-primary text-left " />
+                            <span className="happyClient_span text-secondary" >Better life decisions. </span>
                         </li>
                         <li className=" text-left">
-                            <AirlineSeatFlatAngledIcon className="text-primary text-left h1" />
-                            <span className="text-secondary" >Sleep Better.</span>
+                            <AirlineSeatFlatAngledIcon className="happyClient_icons text-primary text-left " />
+                            <span className="happyClient_span text-secondary" >Sleep Better.</span>
                         </li>
                         <li className=" text-left">
-                            <SentimentSatisfiedAltIcon className="text-primary text-left h1" />
-                            <span className="text-secondary" >More confident.</span>
+                            <SentimentSatisfiedAltIcon className="happyClient_icons text-primary text-left " />
+                            <span className="happyClient_span text-secondary" >More confident.</span>
                         </li>
                         <li className=" text-left">
-                            <HowToRegIcon className="text-primary text-left h1" />
-                            <span className="text-secondary" >Healthier life.  </span>
+                            <HowToRegIcon className="happyClient_icons text-primary text-left " />
+                            <span className="happyClient_span text-secondary" >Healthier life.  </span>
                         </li>
                     </ul>
             </Media>

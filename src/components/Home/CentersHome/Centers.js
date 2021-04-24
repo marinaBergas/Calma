@@ -1,3 +1,4 @@
+import { Row } from "reactstrap";
 import Center1 from "../../../Assets/Images/centers/C1.jpg";
 import Center2 from "../../../Assets/Images/centers/C2.jpg";
 import Center3 from "../../../Assets/Images/centers/C3.jpg";
@@ -34,9 +35,15 @@ const CentersHome = (props) => {
     ];
     return (
       <>
+       <Row className=" justify-content-center mx-0 ">
+
+      <h2 className="mb-5" >Calma Shelters</h2>
+      </Row>
+      <Row className=" justify-content-center mx-0 ">
+
       {centers.map((center) => {
             return (
-                <div className="mx-4 p-0 col-md-3 col-xs-8 centers-card  " key={center.id}>
+                <div className="mx-4 p-0 col-md-3 col-xs-8 centers-card mt-3 mb-3 " key={center.id}>
                   <Center
                     title={center.title}
                     secondTitle={center.secondTitle}
@@ -45,7 +52,10 @@ const CentersHome = (props) => {
                   />
                 </div>
             );
-          })}
+          }
+          )}
+           </Row>
+
       </>
     );
   };
