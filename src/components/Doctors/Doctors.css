@@ -13,7 +13,7 @@
 .gen_btn
 {
     border-radius: 24px 24px !important;
-    width: 150px !important;
+    width: 250px !important;
     text-transform: capitalize;
     font-size: 15px !important;
     padding: 5px 3px ;
@@ -21,4 +21,17 @@
 }
 span{
     margin-left: 0 !important;
+}
+.doctors-card{
+    height: 200px !important;
+}
+.makeStyles-media-2{
+    height: 200px !important;
+    background-size: 300px 220px !important;
+}
+.MuiTypography-body1 {
+        line-height: 1.2 !important;
+}
+.doctor-text{
+    margin-top: 100px !important;
 }

@@ -66,11 +66,12 @@ const DoctorSection = (props) => {
       >        
        <h2 >Calma Doctor</h2>
         <Media className=" align-items-center justify-content-center  p-5  flex-wrap">
-          <Media left className="col-md-4 col-xs-12 ml-0">
-            <Media object src={item.photo} alt="Generic placeholder image" className="w-100 h-100" /></Media>
+          <Media left className="col-md-4 col-xs-12 ml-0 carousel-media">
+            <Media object src={item.photo} alt="Generic placeholder image" className="w-100 h-100 carousel-img" /></Media>
             <Media body className="p-5 text-left col-md-6 col-xs-10 ">
-              <Media heading className="ml-4">{item.displayName}</Media>
-              <Media className="ml-4" >specialized in : {item.spectext}</Media>
+              <Media heading >{item.displayName}</Media>
+              <Media className="h6 py-1" > {item.spectext}</Media>
+              <Media  >specialized in : {item.spectext2}</Media>
                   <div className="py-5 text-left">
                    <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
                   </div>
@@ -105,7 +106,7 @@ const DoctorSection = (props) => {
         }
       </style>
       <Carousel
-      interval={false}
+      // interval={false}
         activeIndex={activeIndex}
         next={next}
         previous={previous}

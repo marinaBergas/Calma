@@ -17,6 +17,7 @@ import "./Doctors.css";
 import { withStyles, createStyles } from "@material-ui/core/styles";
 import MoneyIcon from "@material-ui/icons/Money";
 import { db } from "../../firebase/utils";
+import Footer from "../Footer/Footer";
 // const [state, setstate] = useState(initialState)
 /* function Doctors() {
     return (
@@ -51,12 +52,15 @@ export default function Doctors() {
     return unsubscribe;
   }, []);
   return (
-    <div className="container pt-5">
-      <h2 className="text-dark mt-5">Doctors</h2>
-      <div className="row justify-content-center mt-5">
-        {data.map((item) => {
+    <>
+    
+    <div className="container-fluid px-0 pt-2">
+    <WebNavbar  />
+      <h2 className="text-dark doctor-text">Doctors</h2>
+      <div className="row justify-content-center mt-5 mx-0">
+        {data.map((item,index) => {
           return (
-            <Card className={classes.root} className="col-4 " mx={1}>
+            <Card className={classes.root} className="col-lg-3 col-xs-12 w-80 text-left h-100 my-4 mx-3  " key={index} >
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
@@ -64,34 +68,34 @@ export default function Doctors() {
                   title="Contemplative Reptile"
                   height="100vh"
                 />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h1">
+                <CardContent className="doctors-card">
+                  <Typography gutterBottom  component="h3">
                     {item.displayName}
                   </Typography>
-                  <Typography gutterBottom variant="h6" component="p">
+                  <Typography gutterBottom  component="p">
                     {item.spectext}
                   </Typography>
                   <Typography
-                    variant="body2"
                     color="textSecondary"
                     component="p"
+                    className="overflow-hidden h-50"
                   >
-                    Specialized in:Child disorders, Adolescence disorders,
-                    Depression, Anxiety disorders and obsessions, Marriage
-                    Counselling/Relationship Disorders, Sexual disorders
+                    {item.spectext2}
                   </Typography>
+                  </CardContent>
                   <div className="Price">
                     <Typography
-                      gutterBottom
+                      
                       variant="h6"
                       component="h6"
                       mx="auto"
                     >
                       {" "}
                       <MoneyIcon /> Price{" "}
+                      {item.price}
                     </Typography>
                   </div>
-                </CardContent>
+                
                 <div className={classes.root}>
                   <Rating
                     name="half-rating"
@@ -101,14 +105,14 @@ export default function Doctors() {
                 </div>
               </CardActionArea>
               <CardActions>
-                <div className="row">
-                  <div className=" col-md-6 col-sm-6 ml-0 ">
-                    <Button className="  gen_btn text-white bg-primary ml-0 ">
+                <div className="row text-left">
+                  <div className=" col-lg-10 col-md-12 ml-0 mr-2 p-0 ">
+                    <Button className="  gen_btn text-white bg-primary ml-0 my-2 btn-lg">
                       BOOK NOW
                     </Button>
                   </div>
-                  <div className=" col-md-6 col-sm-6 ml-0">
-                    <Button className=" gen_btn text-white bg-primary  ml-0">
+                  <div className=" col-lg-10 col-md-12 ml-0 p-0">
+                    <Button className=" gen_btn text-white bg-primary  ml-0 my-2">
                       See More
                     </Button>
                   </div>
@@ -118,6 +122,9 @@ export default function Doctors() {
           );
         })}
       </div>
+      <Footer />
     </div>
+    
+    </>
   );
 }

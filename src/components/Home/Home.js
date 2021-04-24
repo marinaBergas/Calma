@@ -5,7 +5,7 @@ import Header from "./Header/Header";
 import { Container, Row, Col } from "reactstrap";
 import Footer from "../Footer/Footer";
 import WebNavbar from "../Navbar/Navbar";
-import DoctorSection from "./Doctors-section/Doctors";
+import DoctorSection from "./Doctors-section/DoctorsHome";
 import BlogsHome from "./Blogs.js/BlogsHome";
 import HappyClient from "./HappyClientSection/HappyClient";
 import CentersHome from "./CentersHome/Centers";

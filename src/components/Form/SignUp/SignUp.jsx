@@ -304,6 +304,17 @@ const SignUp = () => {
                       onChange={handelChanges}
                     />
                   </FormGroup>
+                  <FormGroup className="text-left">
+                    <Label for="spectext">Addition  information *</Label>
+                    <Input
+                      type="text"
+                      name="spectext2"
+                      value={values.spectext2}
+                      id="spectext2"
+                      placeholder="Enter Your Addition  information"
+                      onChange={handelChanges}
+                    />
+                  </FormGroup>
                   <input type="file" onChange={uploadimage} />
                 
                 </div>
