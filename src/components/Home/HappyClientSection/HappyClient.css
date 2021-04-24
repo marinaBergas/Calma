@@ -2,3 +2,12 @@
     background-color: var( --back-ground )  !important;
    
 }
+.happyClient_span{
+    margin-left:10px !important; 
+}
+@media (max-width: 576px) {
+.happyClient_icons{
+   font-weight: 300 !important;
+   font-size:1.5rem !important ;
+ } 
+}

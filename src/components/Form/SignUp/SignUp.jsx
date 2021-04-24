@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useHistory, link } from "react-router-dom";
 
 import { Button, Form, FormGroup, Label, Input, ButtonGroup } from "reactstrap";
-import image from "../../../Assets/Images/calm.jpg";
 
 import "./SignUp.css";
 import { FaUserMd } from "react-icons/fa";
@@ -120,7 +119,13 @@ const SignUp = () => {
     }
   }, [signInSuccess]);
 
-  const { handelChanges, handelSubmit, errors, values } = useForm();
+  const {
+    handelChanges,
+    handelSubmit,
+    errors,
+    values,
+    uploadimage,
+  } = useForm();
   return (
     <div className="signup py-5">
       <div className="container-fluid">
@@ -148,7 +153,7 @@ const SignUp = () => {
                       rSelected === 1 ? "text-primary h2" : "text-dark h2"
                     }
                   />
-                  <p className="fw-bolder" >Visitor</p>
+                  <p className="fw-bolder">Visitor</p>
                 </Button>
                 <Button
                   className={
@@ -164,7 +169,7 @@ const SignUp = () => {
                       rSelected === 2 ? "text-primary h2" : "text-dark h2"
                     }
                   />
-                  <p className="fw-bolder" > Doctor</p>
+                  <p className="fw-bolder"> Doctor</p>
                 </Button>
               </ButtonGroup>
               <FormGroup className="text-left">
@@ -289,17 +294,18 @@ const SignUp = () => {
                     />
                   </FormGroup>
                   <FormGroup className="text-left">
-                <Label for="spectext">Specialized*</Label>
-                <Input
-                  type="text"
-                  name="spectext"
-                  value={values.spec}
-                  id="spectext"
-                  placeholder="Enter Your Specialized"
-                  onChange={handelChanges}
-                />
-               
-              </FormGroup>
+                    <Label for="spectext">Specialized*</Label>
+                    <Input
+                      type="text"
+                      name="spectext"
+                      value={values.spectext}
+                      id="spectext"
+                      placeholder="Enter Your Specialized"
+                      onChange={handelChanges}
+                    />
+                  </FormGroup>
+                  <input type="file" onChange={uploadimage} />
+                
                 </div>
               )}
               <Button

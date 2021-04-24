@@ -16,7 +16,6 @@ const requestReducer = (state=AppointRequests,action)=>{
             return patients.filter(patient=>patient.id !==action.payload.id); 
         default:
             return state;
-
     }
    
 }

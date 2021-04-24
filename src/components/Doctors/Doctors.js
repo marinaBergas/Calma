@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
     display: "flex",
-    
+
     flexDirection: "column",
     "& > * + *": {
       marginTop: theme.spacing(1),
@@ -52,32 +52,33 @@ export default function Doctors() {
   }, []);
   return (
     <div className="container pt-5">
-        <h2 className="text-dark mt-5">Doctors</h2>
+      <h2 className="text-dark mt-5">Doctors</h2>
       <div className="row justify-content-center mt-5">
-      
         {data.map((item) => {
           return (
-            <Card className={classes.root} className="col-4" mx={1}>
+            <Card className={classes.root} className="col-4 " mx={1}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image={photo}
+                  image={item.photo}
                   title="Contemplative Reptile"
                   height="100vh"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h1">
-                    Zein El Abdeen Sanhoury
+                    {item.displayName}
                   </Typography>
                   <Typography gutterBottom variant="h6" component="p">
-                    Clinical Psychotherapist
+                    {item.spectext}
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    Specialized in: Personality disorders , Sexual disorders
+                    Specialized in:Child disorders, Adolescence disorders,
+                    Depression, Anxiety disorders and obsessions, Marriage
+                    Counselling/Relationship Disorders, Sexual disorders
                   </Typography>
                   <div className="Price">
                     <Typography
@@ -100,18 +101,18 @@ export default function Doctors() {
                 </div>
               </CardActionArea>
               <CardActions>
-              <div className="row d-flex flex-nowrap">
-                    <div className=" col-md-6 col-sm-6 ">
-                      <Button  color="primary" className="bg-primary my-2 p-0 mx-4 w-100">
-                         Book Now
-                      </Button>
-                    </div>
-                    <div  className=" col-md-6 col-sm-6 ">
-                      <Button  color="primary" className="bg-primary" >
-                        See More
-                      </Button>
-                    </div>
+                <div className="row">
+                  <div className=" col-md-6 col-sm-6 ml-0 ">
+                    <Button className="  gen_btn text-white bg-primary ml-0 ">
+                      BOOK NOW
+                    </Button>
                   </div>
+                  <div className=" col-md-6 col-sm-6 ml-0">
+                    <Button className=" gen_btn text-white bg-primary  ml-0">
+                      See More
+                    </Button>
+                  </div>
+                </div>
               </CardActions>
             </Card>
           );

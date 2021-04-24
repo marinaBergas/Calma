@@ -1,0 +1,9 @@
+.center-card{
+  height: 500px !important;
+}
+.center-card:hover{
+    cursor: pointer;
+}
+.Centers-container{
+  background-color: var( --back-ground )  !important;
+}

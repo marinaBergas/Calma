@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Carousel,
   CarouselItem,
@@ -8,42 +8,40 @@ import {
   Row
 } from 'reactstrap';
 import photo from '../../../Assets/Images/d1.jpg';
-import './Doctors.css'
+import './DoctorsHome.css'
 import { Media } from 'reactstrap';
 import Rating from '@material-ui/lab/Rating';
 import {Button} from 'reactstrap';
-const items = [
-  {
-    id: 1,
-    altText: 'Slide 1',
-    caption: 'Slide 1'
-  },
-  {
-    id: 2,
-    altText: 'Slide 2',
-    caption: 'Slide 2'
-  },
-  {
-    id: 3,
-    altText: 'Slide 3',
-    caption: 'Slide 3'
-  }
-];
+import { db } from "../../../firebase/utils";
+import { useHistory } from 'react-router';
+
 
 const DoctorSection = (props) => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const [data, setdata] = useState([]);
+  const history = useHistory();
+  useEffect(() => {
+    const unsubscribe = db.collection("doctors").onSnapshot((querySnapshot) => {
+      const documents = querySnapshot.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
+      console.log("documents",documents);
+      setdata(documents);
+    });
+    return unsubscribe;
+  }, []);
 
   const next = () => {
     if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    const nextIndex = activeIndex === data.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   }
 
   const previous = () => {
     if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === 0 ? data.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   }
 
@@ -51,10 +49,14 @@ const DoctorSection = (props) => {
     if (animating) return;
     setActiveIndex(newIndex);
   }
+  const handleSubmit=()=>{
+    history.push("/doctors");
+  }
 
-  const slides = items.map((item) => {
+  const slides = data.map((item) => {
     
     return (
+      
       <CarouselItem
         className="custom-tag p-0 m-0"
         tag="div"
@@ -62,24 +64,25 @@ const DoctorSection = (props) => {
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
       >        
+       <h2 >Calma Doctor</h2>
         <Media className=" align-items-center justify-content-center  p-5  flex-wrap">
-          <Media left className="col-md-4 col-sm-12 ml-0">
-            <Media object src={photo} alt="Generic placeholder image" className="w-100 " /></Media>
-            <Media body className="p-5 text-left col-md-6 col-sm-10 ">
-              <Media heading className="ml-4">Media heading</Media>
-              <Media  className="ml-4">  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</Media>
+          <Media left className="col-md-4 col-xs-12 ml-0">
+            <Media object src={item.photoURL} alt="Generic placeholder image" className="w-100 " /></Media>
+            <Media body className="p-5 text-left col-md-6 col-xs-10 ">
+              <Media heading className="ml-4">{item.displayName}</Media>
+              <Media  > {item.displayName}</Media>
                   <div className="py-5 text-left">
                    <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
                   </div>
-                  <div className="row d-flex flex-nowrap">
-                    <div className=" col-md-6 col-sm-6 ">
-                      <Button  color="primary" className=" bg-primary my-2 p-0 mx-4 w-100">
-                         Book Now
+                  <div className="row d-flex">
+                    <div className=" col-md-6 col-xs-12 ">
+                      <Button  color="primary" className=" bg-primary btn-doctor my-2   w-100 text-uppercase">
+                         book now
                       </Button>
                     </div>
-                    <div  className=" col-md-6 col-sm-6 ">
-                      <Button  color="primary" className=" bg-primary my-2 p-0 mx-4  w-100 " >
-                        See More
+                    <div  className=" col-md-6 col-xs-12 ">
+                      <Button  color="primary" className=" bg-primary  btn-doctor my-2 w-100 text-uppercase" onClick={handleSubmit} >
+                        see more
                       </Button>
                     </div>
                   </div>
@@ -102,12 +105,12 @@ const DoctorSection = (props) => {
         }
       </style>
       <Carousel
-      // interval={false}
+      interval={false}
         activeIndex={activeIndex}
         next={next}
         previous={previous}
       >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+        <CarouselIndicators items={data} activeIndex={activeIndex} onClickHandler={goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} className="p-5 justify-content-between " />
         <CarouselControl direction="next" directionText="Next" onClickHandler={next}  className="p-5 justify-content-flex-end"/>
