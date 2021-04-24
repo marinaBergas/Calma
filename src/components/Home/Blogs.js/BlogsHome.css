@@ -7,10 +7,16 @@
 
 } */
 
+
 .card_blog:hover {
     transform: scale(1.2) ;
     z-index:1;
 }
 .card{
     transition: transform .2s;
+}
+.btn-blogs{
+    width: 80% !important;
+    background-color: var(--btn-color )  !important;
+    border-radius: 5rem !important;
 }

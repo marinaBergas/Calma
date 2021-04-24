@@ -40,7 +40,7 @@ const Privace = () => {
     <Container className="privace-container  justifiy-content-center " >
         <Row className="flex-wrap text-left">
             <div className="col-8">
-              <h2>Privacy and Policy </h2>
+              <h3>Privacy and Policy </h3>
               <p>Date of Last Revision: 2021</p>
             </div>
         </Row>
