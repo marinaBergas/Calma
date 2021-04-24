@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {store} from './redux/CreatStore';
 import {Provider} from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+
 ReactDOM.render(
   // <React.StrictMode>
   <Provider store={store}>

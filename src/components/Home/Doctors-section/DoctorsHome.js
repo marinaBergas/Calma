@@ -8,7 +8,7 @@ import {
   Row
 } from 'reactstrap';
 import photo from '../../../Assets/Images/d1.jpg';
-import './Doctors.css'
+import './DoctorsHome.css'
 import { Media } from 'reactstrap';
 import Rating from '@material-ui/lab/Rating';
 import {Button} from 'reactstrap';
@@ -64,7 +64,7 @@ const DoctorSection = (props) => {
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
       >        
-       <h1>Calma Doctor</h1>
+       <h2 >Calma Doctor</h2>
         <Media className=" align-items-center justify-content-center  p-5  flex-wrap">
           <Media left className="col-md-4 col-xs-12 ml-0">
             <Media object src={item.photoURL} alt="Generic placeholder image" className="w-100 " /></Media>

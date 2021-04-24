@@ -3,7 +3,7 @@ import Header from './Header/Header'
 import { Container, Row, Col } from 'reactstrap';
 import Footer from '../Footer/Footer';
 import WebNavbar from '../Navbar/Navbar';
-import DoctorSection from './Doctors-section/Doctors';
+import DoctorSection from './Doctors-section/DoctorsHome';
 import BlogsHome from './Blogs.js/BlogsHome';
 import HappyClient from './HappyClientSection/HappyClient';
 import CentersHome from './CentersHome/Centers';
@@ -12,14 +12,12 @@ import CentersHome from './CentersHome/Centers';
 function Home(props) {
     return (
       <>
-      <Container fluid={true} className=" p-0 m-0" >
+      <Container fluid={true} className=" p-0 m-0 " >
         <Container fluid={true} className="header-container p-0  ">
-          <Row className="align-items-center justify-content-center header-row mx-0 " >
-             <Header {...props}/>
-           </Row>
+             <Header />
         </Container>
-        <Container fluid={true} className="Doctors-container  p-0">
-          <Row className=" doctor-container ">
+        <Container fluid={true} className="Doctors-container  pt-5">
+          <Row className=" doctor-container mx-0">
             <div className="col-sm-12 mx-0 ">
               <DoctorSection/>
             </div>
@@ -34,10 +32,8 @@ function Home(props) {
           </Row>
         </Container>
 
-        <Container fluid={true} className="Blogs-container  px-0 ">
-          <Row className=" blog-container justify-content-center mx-0 ">
+        <Container fluid={true} className="Centers-container  px-0 ">
               <CentersHome/>
-          </Row>
         </Container>
         <Footer/>
         </Container>
