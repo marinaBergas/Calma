@@ -6,6 +6,7 @@ import AllAppoints from "./All-Appointments/AllAppoints";
 import SideBar from "./Sidebartwo/SideBar";
 import Background from "./Sidebartwo/Background";
 import Navbar from "./Sidebartwo/Navbar";
+import Book from "../Schedule/Book";
 
 function Dashboard() {
   const [isOpened, setIsOpened] = useState(true);
@@ -35,6 +36,7 @@ function Dashboard() {
           })}
         </div>
             <Appointments/>
+  
       </div>
     <div/>
     </div>
