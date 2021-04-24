@@ -14,10 +14,14 @@ import Rating from '@material-ui/lab/Rating';
 import {Button} from 'reactstrap';
 import { db } from "../../../firebase/utils";
 import { useHistory } from 'react-router';
+import { useSelector } from 'react-redux';
 
+const mapState = ({ user }) => ({
+  currentUser: user.currentUser,
+  signInSuccess :user.signInSuccess,});
 
 const DoctorSection = (props) => {
-
+ const { signInSuccess, currentUser } = useSelector(mapState);
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [data, setdata] = useState([]);
@@ -55,7 +59,13 @@ const DoctorSection = (props) => {
   }
   
     const BookNow=()=>{
-      history.push("/book");
+      if (currentUser) {
+
+        history.push("/book");
+      }
+      else{
+        history.push("register/signin");
+      }
     }
   const slides = data.map((item) => {
   
@@ -69,7 +79,7 @@ const DoctorSection = (props) => {
         onExited={() => setAnimating(false)}
       >        
        <h2 >Calma Doctor</h2>
-        <Media className=" align-items-center justify-content-center  p-5  flex-wrap">
+        <Media className=" align-items-center justify-content-center  py-5  flex-wrap">
           <Media left className="col-md-4 col-xs-12 ml-0 carousel-media">
             <Media object src={item.photo} alt="Generic placeholder image" className="w-100 h-100 carousel-img" /></Media>
             <Media body className="p-5 text-left col-md-6 col-xs-10 ">

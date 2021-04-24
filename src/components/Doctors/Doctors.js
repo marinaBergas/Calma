@@ -19,6 +19,7 @@ import MoneyIcon from "@material-ui/icons/Money";
 import { db } from "../../firebase/utils";
 import Footer from "../Footer/Footer";
 import { useHistory } from "react-router";
+import { useSelector } from "react-redux";
 // const [state, setstate] = useState(initialState)
 /* function Doctors() {
     return (
@@ -39,13 +40,24 @@ const useStyles = makeStyles((theme) => ({
     height: 140,
   },
 }));
+const mapState = ({ user }) => ({
+  currentUser: user.currentUser,
+  signInSuccess :user.signInSuccess,});
 
 export default function Doctors() {
+  const { signInSuccess, currentUser } = useSelector(mapState);
   const history = useHistory();
   const classes = useStyles();
   const [data, setdata] = useState([]);
   const BookNow=()=>{
-    history.push("/book");
+    if (currentUser) {
+
+      history.push("/book");
+    }
+    else{
+      history.push("register/signin");
+    }
+    
   }
   useEffect(() => {
     const unsubscribe = db.collection("doctors").onSnapshot((querySnapshot) => {
