@@ -17,7 +17,8 @@ function Header() {
     return (
           <>
             <WebNavbar/>
-            <div className="header-text text-center text-md-left  my-5 py-5">
+            <Row className="align-items-center justify-content-center header-row m-0 " >
+            <div className="header-text text-center text-md-left  my-5 py-5 m-0">
               <div className="header-content px-5 col-xs-12">
 			          {/* <h1 key={1} className="mb-4 text-left text-white">Be Calm With Us </h1> */}
               </div>
@@ -26,6 +27,7 @@ function Header() {
             {/* <div className="header-image col-12 col-md-4 col-lg-6 col-xl-7">
 			      	<img src={image} className="img-fluid p-0"/>
 		      	</div>  */}
+            </Row>
          </>
     )
 }

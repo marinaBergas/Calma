@@ -26,9 +26,8 @@ export const handleUserProfile = async (userAuth, usertype, additionalData) => {
     // else doesn't exist  so create a new user
     const { email } = userAuth;
     const timesTamp = new Date();
-    //const userRoles = ['user'];
-    const userRoles =
-      email === "mera.saber@yahoo.com" ? ["user", "admin"] : "user";
+    const userRoles = ['user'];
+  
     try {
       await userRef.set({
         email,

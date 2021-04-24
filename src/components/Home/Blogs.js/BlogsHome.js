@@ -47,7 +47,7 @@ const BlogsHome = (props) => {
   ];
   return (
     <>
-    <div className="row justify-content-center align-items-center">
+    <div className="row justify-content-center align-items-center mx-0">
     {articles.map((article) => {
           return (
               <div className="w-100 mx-4 p-0 col-md-3 col-xs-8 blogs-card  " key={article.id}>
@@ -62,7 +62,7 @@ const BlogsHome = (props) => {
           );
         })}
         </div>
-        <div className="row justify-content-center align-items-center mt-5">
+        <div className="row justify-content-center align-items-center mt-5 mx-0">
           <div className="col-md-3 col-xs-6">
             <Button  color="primary" className=" bg-primary  btn-blogs my-2  text-uppercase mx-4 "onClick={handleSubmit}>see more</Button>
           </div>
