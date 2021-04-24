@@ -70,7 +70,7 @@ const DoctorSection = (props) => {
             <Media object src={item.photo} alt="Generic placeholder image" className="w-100 h-100" /></Media>
             <Media body className="p-5 text-left col-md-6 col-xs-10 ">
               <Media heading className="ml-4">{item.displayName}</Media>
-              <Media  > {item.displayName}</Media>
+              <Media className="ml-4" >specialized in : {item.spectext}</Media>
                   <div className="py-5 text-left">
                    <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
                   </div>
