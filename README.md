@@ -1,11 +1,11 @@
 # CALMA 
 
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/logo.jpeg" width="600" height="600"> 
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/logo.jpeg" width="900" height="400"> 
 
 
 ## We help People relieve.
 
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg" width="250" height="250"> <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/privacy.jpeg" width="200" height="200">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg" width="450" height="400"> <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/privacy.jpeg" width="200" height="200">
 
 
 People facing a big problem when visiting pyschological clinics and not easy to take this step fairing from privacy besides corona virus effects in our life , so CALMA help people communicate with doctors in complete
