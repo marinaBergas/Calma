@@ -1,6 +1,6 @@
 # CALMA 
 
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/logo.jpeg | width=100)
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/logo.jpeg" width="100" height="100"> 
 
 
 ## We help People relieve.
