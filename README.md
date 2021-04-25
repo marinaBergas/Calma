@@ -1,11 +1,11 @@
 # CALMA 
 
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/logo.jpeg =100*20)
+![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/logo.jpeg | width=100)
 
 
 ## We help People relieve.
 
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg)
+![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg =250x250)
 ![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/privacy.jpeg)
 
 
