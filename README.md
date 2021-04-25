@@ -35,10 +35,9 @@ Users can sign up to chat with doctors
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/sign_up.jpeg" width="800" height="500">
 
 ### 4- Chat 
-
-
 Chat between  doctors and patients in complete privacy
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/chats.jpeg" width="400" height="800">
+
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/chats.jpeg" width="800" height="500">
 
 ### 5- Dashboard
 
