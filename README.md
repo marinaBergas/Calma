@@ -17,7 +17,7 @@ In our application we will make it easier by providing pyschological support for
 ## Project faetures:
 
 ### 1- Blogs with articles about mental health
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/article.jpeg" width="100" height="100"> <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/blogs.jpeg" width="100" height="100">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/article.jpeg" width="400" height="500"> <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/blogs.jpeg" width="400" height="500">
 
 ### 2- List of well known doctors you can choose from to chat with
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/doctors.jpeg" width="100" height="100">
