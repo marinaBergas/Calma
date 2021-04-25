@@ -1,11 +1,11 @@
 # CALMA 
 
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/logo.jpeg" width="100" height="100"> 
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/logo.jpeg" width="300" height="200"> 
 
 
 ## We help People relieve.
 
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg" width="100" height="100"> <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/privacy.jpeg" width="100" height="100">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg" width="250" height="250"> <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/privacy.jpeg" width="200" height="200">
 
 
 People facing a big problem when visiting pyschological clinics and not easy to take this step fairing from privacy besides corona virus effects in our life , so CALMA help people communicate with doctors in complete
@@ -17,8 +17,7 @@ In our application we will make it easier by providing pyschological support for
 ## Project faetures:
 
 ### 1- Blogs with articles about mental health
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/article.jpeg" width="100" height="100">
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/blogs.jpeg" width="100" height="100">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/article.jpeg" width="100" height="100"> <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/blogs.jpeg" width="100" height="100">
 
 ### 2- List of well known doctors you can choose from to chat with
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/doctors.jpeg" width="100" height="100">
