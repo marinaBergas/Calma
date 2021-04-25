@@ -1,18 +1,24 @@
 import React from "react";
 import { Button } from "reactstrap";
-import { useHistory } from "react-router";
+
 import Header from "./Header/Header";
 import { Container, Row, Col } from "reactstrap";
 import Footer from "../Footer/Footer";
 import WebNavbar from "../Navbar/Navbar";
-import DoctorSection from "./Doctors-section/Doctors";
+import DoctorSection from "./Doctors-section/DoctorsHome";
 import BlogsHome from "./Blogs.js/BlogsHome";
 import HappyClient from "./HappyClientSection/HappyClient";
 import CentersHome from "./CentersHome/Centers";
 import Messenger from "../Dashboard/Messenger";
 import { Link } from "react-router-dom";
+import {NavLink} from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import {withRouter} from 'react-router-dom';
+
 
 function Home(props) {
+
+ 
   return (
     <>
       <Container fluid={true} className=" p-0 m-0">
@@ -44,10 +50,11 @@ function Home(props) {
           <Row className=" justify-content-center mx-0">
             <div className=" col-md-6 col-xs-12 ">
               <Button
+              
                 color="primary"
                 className=" bg-primary  btn-doctor my-2 w-100 text-uppercase"
               >
-              <Link to="/dashboard/Messenger"></Link> GO TO CALMA MESSENGER
+               GO TO CALMA MESSENGER
               </Button>
             </div>
           </Row>

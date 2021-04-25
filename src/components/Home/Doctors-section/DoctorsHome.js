@@ -67,7 +67,7 @@ const DoctorSection = (props) => {
        <h2 >Calma Doctor</h2>
         <Media className=" align-items-center justify-content-center  p-5  flex-wrap">
           <Media left className="col-md-4 col-xs-12 ml-0">
-            <Media object src={item.photoURL} alt="Generic placeholder image" className="w-100 " /></Media>
+            <Media object src={item.photo} alt="Generic placeholder image" className="w-100 " /></Media>
             <Media body className="p-5 text-left col-md-6 col-xs-10 ">
               <Media heading className="ml-4">{item.displayName}</Media>
               <Media  > {item.displayName}</Media>
