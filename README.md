@@ -19,22 +19,30 @@ In our application we will make it easier by providing pyschological support for
 ### 1- Blogs
 Articles about mental health
 
+
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/article.jpeg" width="400" height="500"> <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/blogs.jpeg" width="400" height="500">
 
 ### 2- List Doctors
 Well known list of doctors you can choose from to chat with
 
+
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/doctors.jpeg" width="400" height="500">
 
 ### 3- Registration 
 Users can sign up to chat with doctors
+
+
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/sign_up.jpeg" width="400" height="500">
 
 ### 4- Chat 
+
+
 Chat between  doctors and patients in complete privacy
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/chats.jpeg" width="400" height="500">
 
 ### 5- Dashboard
+
+
 Dashboard for doctors to organize communication with patients
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/dashboard.jpeg" width="400" height="500">
 
