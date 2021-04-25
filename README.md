@@ -32,19 +32,19 @@ Well known list of doctors you can choose from to chat with
 Users can sign up to chat with doctors
 
 
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/sign_up.jpeg" width="400" height="500">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/sign_up.jpeg" width="800" height="500">
 
 ### 4- Chat 
 
 
 Chat between  doctors and patients in complete privacy
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/chats.jpeg" width="400" height="500">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/chats.jpeg" width="400" height="800">
 
 ### 5- Dashboard
 
 
 Dashboard for doctors to organize communication with patients
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/dashboard.jpeg" width="400" height="500">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/dashboard.jpeg" width="800" height="500">
 
 
 ## How to run the project
