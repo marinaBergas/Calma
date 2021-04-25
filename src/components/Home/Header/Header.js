@@ -26,9 +26,7 @@ function Header() {
             </div> 
             </Row>
             
-            {/* <div className="header-image col-12 col-md-4 col-lg-6 col-xl-7">
-			      	<img src={image} className="img-fluid p-0"/>
-		      	</div>  */}
+          
          </>
     )
 }

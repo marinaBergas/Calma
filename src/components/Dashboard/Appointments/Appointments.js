@@ -23,28 +23,28 @@ export const Appointments = () => {
             {patient.map((item, index) => {
               return (
               
-                  <div key={index} class="px-1 py-3 mx-auto">
-                      <div class="card">
-                        <div class="row d-flex justify-content-between mx-2 px-3 card-strip">
-                          <div class="left d-flex flex-column">
-                            <h5 class="mb-1">{item.time}</h5>
-                            <p class="text-muted mb-1 sm-text">
+                  <div key={index} className="px-1 py-3 mx-auto">
+                      <div className="card">
+                        <div className="row d-flex justify-content-between mx-2 px-3 card-strip">
+                          <div className="left d-flex flex-column">
+                            <h5 className="mb-1">{item.time}</h5>
+                            <p className="text-muted mb-1 sm-text">
                               {item.AppDate}
                             </p>
                           </div>
-                          <div class="right">
+                          <div className="right">
                             <img
                               className="client-img"
                               src={item.imagePath}
                             ></img>
                           </div>
                         </div>
-                        <div class="row d-flex justify-content-between mx-2 px-3 card-strip">
-                          <div class="left d-flex flex-column">
-                            <h5 class="mb-1">{item.patientName}</h5>
-                            <p class="text-muted mb-1 sm-text">FIRST VISIT</p>
+                        <div className="row d-flex justify-content-between mx-2 px-3 card-strip">
+                          <div className="left d-flex flex-column">
+                            <h5 className="mb-1">{item.patientName}</h5>
+                            <p className="text-muted mb-1 sm-text">FIRST VISIT</p>
                           </div>
-                          <div class="right d-flex">
+                          <div className="right d-flex">
                             <div className="mr-2">
                               <ChatBubbleOutlineOutlinedIcon
                                 style={{ fontSize: 40 }}
@@ -57,18 +57,18 @@ export const Appointments = () => {
                             </div>
                           </div>
                         </div>
-                        <div class="row justify-content-between mx-2 px-3 card-strip">
-                          <div class="left d-flex">
-                            <h5 class="mb-1 text-muted">Blowout and style</h5>
-                            <span class="time">{item.Duration}</span>
+                        <div className="row justify-content-between mx-2 px-3 card-strip">
+                          <div className="left d-flex">
+                            <h5 className="mb-1 text-muted">Duration</h5>
+                            <span className="time">{item.Duration}</span>
                           </div>
-                          <div class="right d-flex">
-                            <p class="mb-0 price">
-                              <strong class="text-muted">$80.00</strong>
+                          <div className="right d-flex">
+                            <p className="mb-0 price">
+                              <strong className="text-muted">$80.00</strong>
                             </p>
                           </div>
                         </div>
-                        <div class="d-flex justify-content-center align-items-center mx-2 px-3">
+                        <div className="d-flex justify-content-center align-items-center mx-2 px-3">
                           <button
                             className="btn btn_appoint btn-danger p-2 mr-3 w-50"
                             onClick={() => {

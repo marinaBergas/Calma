@@ -37,7 +37,7 @@ const CentersHome = (props) => {
       <>
        <Row className=" justify-content-center mx-0 ">
 
-      <h2 className="mb-5" >Calma Shelters</h2>
+      <h2 className="mb-5 mt-5" >Calma Centers</h2>
       </Row>
       <Row className=" justify-content-center mx-0 ">
 

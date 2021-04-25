@@ -13,6 +13,7 @@ const initialState = {
   numberyear: "",
   license: "",
   spectext: "",
+  spectext2: "",
   photo: "",
 };
 const useForm = () => {
@@ -60,6 +61,7 @@ const useForm = () => {
       numberyear,
       license,
       spectext,
+      spectext2,
       photo,
     } = values;
     try {
@@ -75,6 +77,7 @@ const useForm = () => {
         numberyear,
         license,
         spectext,
+        spectext2,
         photo,
       });
       setValues({ ...initialState });

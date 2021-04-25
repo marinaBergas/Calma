@@ -80,7 +80,7 @@ const SideBar = ({ show, setIsOpened }) => {
         <div className=" d-flex flex-column align-items-center mt-5 justify-content-center">
         <div className="docInfo">
                 <img className="docImg" src={Logo}></img>
-                <h2 className="mt-3 ">Dr.Stranger</h2>
+                <h2 className="mt-3">Dr.Stranger</h2>
                 <hr className="hr mt-5" />
               </div>
               <div className="links d-flex mt-2 flex-column align-items-start justify-content-center">

@@ -9,12 +9,17 @@ import DoctorSection from "./Doctors-section/DoctorsHome";
 import BlogsHome from "./Blogs.js/BlogsHome";
 import HappyClient from "./HappyClientSection/HappyClient";
 import CentersHome from "./CentersHome/Centers";
+<<<<<<< HEAD
 import Messenger from "../Dashboard/Messenger";
 import { Link } from "react-router-dom";
 import {NavLink} from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import {withRouter} from 'react-router-dom';
 
+=======
+
+import MessengerHome from "./Messenger Home/Messenger";
+>>>>>>> 65e6cf95531a7522c3e92b037f96b75855af2888
 
 function Home(props) {
 
@@ -37,7 +42,7 @@ function Home(props) {
         <Container fluid={true} className="Blogs-container  px-0 py-5">
           <BlogsHome />
         </Container>
-        <Container fluid={true} className="HappyClient-container  px-0 py-5 ">
+        <Container fluid={true} className="HappyClient-container   p-0 m-0">
           <Row className=" mx-0 ">
             <HappyClient />
           </Row>
@@ -46,17 +51,9 @@ function Home(props) {
         <Container fluid={true} className="Centers-container  px-0 ">
               <CentersHome/>
         </Container>
-        <Container fluid={true} className="px-0 ">
+        <Container fluid={true} className="px-0 messenger-container py-5">
           <Row className=" justify-content-center mx-0">
-            <div className=" col-md-6 col-xs-12 ">
-              <Button
-              
-                color="primary"
-                className=" bg-primary  btn-doctor my-2 w-100 text-uppercase"
-              >
-               GO TO CALMA MESSENGER
-              </Button>
-            </div>
+           <MessengerHome/>
           </Row>
         </Container>
         <Footer />
