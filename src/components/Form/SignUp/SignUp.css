@@ -8,9 +8,9 @@ form {
   justify-content: center;
 }
 .signup {
-  background-image: url("../../../Assets/Images/header-cover.jpg");
-  background-size: cover;
-  background-position: center;
+  background-image: url("../../../Assets/Images/header-cover.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 .signup-form {
   background-color: #fff;

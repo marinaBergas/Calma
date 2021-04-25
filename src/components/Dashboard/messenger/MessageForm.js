@@ -3,6 +3,8 @@ import React from 'react'
 import { useState } from 'react';
 import { SendOutlined, PictureOutlined } from '@ant-design/icons';
 import { sendMessage, isTyping } from 'react-chat-engine';
+import VideoCallIcon from '@material-ui/icons/VideoCall';
+import { Button } from "reactstrap";
 
 const MessageForm = (props) => {
   const [value, setValue] = useState('');
@@ -31,6 +33,7 @@ const MessageForm = (props) => {
   };
 
   return (
+    <>
     <form className="message-form" onSubmit={handleSubmit}>
       <input
         className="message-input"
@@ -54,7 +57,12 @@ const MessageForm = (props) => {
       <button type="submit" className="send-button">
         <SendOutlined className="send-icon" />
       </button>
+      
     </form>
+    <button type="submit" className="send-button bg-primary w-100"  >
+    <VideoCallIcon />
+    </button>
+    </>
   );
 };
 

@@ -4,6 +4,8 @@ import "./Messenger.css";
 import LoginForm from './messenger/LoginForm'; 
 import WebNavbar from "../Navbar/Navbar";
 import { Container, Row, Col } from 'reactstrap';
+import Homebtn from './messenger/Homebtn'
+import { Button } from "reactstrap";
 
 const projectID = 'db336757-f2cc-4004-8a8d-85d4069e021f';
 const Messenger = () => {
@@ -13,8 +15,9 @@ const Messenger = () => {
     {/* <WebNavbar /> */}
  
     <ChatEngine 
-      padding-top="10rem"
-      height="100vh"
+    
+     
+      height="95vh"
       projectID="db336757-f2cc-4004-8a8d-85d4069e021f"
       userName="Esraa"
       userSecret="1234567Aa"

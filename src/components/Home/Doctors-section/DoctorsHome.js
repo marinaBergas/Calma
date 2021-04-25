@@ -14,10 +14,14 @@ import Rating from '@material-ui/lab/Rating';
 import {Button} from 'reactstrap';
 import { db } from "../../../firebase/utils";
 import { useHistory } from 'react-router';
+import { useSelector } from 'react-redux';
 
+const mapState = ({ user }) => ({
+  currentUser: user.currentUser,
+  signInSuccess :user.signInSuccess,});
 
 const DoctorSection = (props) => {
-
+ const { signInSuccess, currentUser } = useSelector(mapState);
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [data, setdata] = useState([]);
@@ -46,15 +50,25 @@ const DoctorSection = (props) => {
   }
 
   const goToIndex = (newIndex) => {
+    
     if (animating) return;
     setActiveIndex(newIndex);
   }
   const handleSubmit=()=>{
     history.push("/doctors");
   }
+  
+    const BookNow=()=>{
+      if (currentUser) {
 
+        history.push("/book");
+      }
+      else{
+        history.push("register/signin");
+      }
+    }
   const slides = data.map((item) => {
-    
+  
     return (
       
       <CarouselItem
@@ -65,18 +79,19 @@ const DoctorSection = (props) => {
         onExited={() => setAnimating(false)}
       >        
        <h2 >Calma Doctor</h2>
-        <Media className=" align-items-center justify-content-center  p-5  flex-wrap">
-          <Media left className="col-md-4 col-xs-12 ml-0">
-            <Media object src={item.photo} alt="Generic placeholder image" className="w-100 " /></Media>
+        <Media className=" align-items-center justify-content-center  py-5  flex-wrap">
+          <Media left className="col-md-4 col-xs-12 ml-0 carousel-media">
+            <Media object src={item.photo} alt="Generic placeholder image" className="w-100 h-100 carousel-img" /></Media>
             <Media body className="p-5 text-left col-md-6 col-xs-10 ">
-              <Media heading className="ml-4">{item.displayName}</Media>
-              <Media  > {item.spectext}</Media>
+              <Media heading >{item.displayName}</Media>
+              <Media className="h6 py-1" > {item.spectext}</Media>
+              <Media  >specialized in : {item.spectext2}</Media>
                   <div className="py-5 text-left">
                    <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
                   </div>
                   <div className="row d-flex">
                     <div className=" col-md-6 col-xs-12 ">
-                      <Button  color="primary" className=" bg-primary btn-doctor my-2   w-100 text-uppercase">
+                      <Button  color="primary" className=" bg-primary btn-doctor my-2   w-100 text-uppercase" onClick={BookNow}>
                          book now
                       </Button>
                     </div>
@@ -105,7 +120,7 @@ const DoctorSection = (props) => {
         }
       </style>
       <Carousel
-      interval={false}
+      // interval={false}
         activeIndex={activeIndex}
         next={next}
         previous={previous}
