@@ -5,8 +5,8 @@
 
 ## We help People relieve.
 
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg =250x250)
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/privacy.jpeg)
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg" width="100" height="100">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/privacy.jpeg" width="100" height="100">
 
 
 People facing a big problem when visiting pyschological clinics and not easy to take this step fairing from privacy besides corona virus effects in our life , so CALMA help people communicate with doctors in complete
@@ -18,20 +18,20 @@ In our application we will make it easier by providing pyschological support for
 ## Project faetures:
 
 ### 1- Blogs with articles about mental health
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/article.jpeg)
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/blogs.jpeg)
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/article.jpeg" width="100" height="100">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/blogs.jpeg" width="100" height="100">
 
 ### 2- List of well known doctors you can choose from to chat with
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/doctors.jpeg)
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/doctors.jpeg" width="100" height="100">
 
 ### 3- Users can sign up to chat with doctors
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/signup.jpeg)
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/signup.jpeg" width="100" height="100">
 
 ### 4- Chat with doctors and patients in complete privacy
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/chats.jpeg)
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/chats.jpeg" width="100" height="100">
 
 ### 5- Dashboard for doctors to organize communication with patients
-![alt text](https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/dashboard.jpeg)
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/dashboard.jpeg" width="100" height="100">
 
 
 ## How to run the project
