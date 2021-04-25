@@ -5,8 +5,7 @@
 
 ## We help People relieve.
 
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg" width="100" height="100">
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/privacy.jpeg" width="100" height="100">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/home.jpeg" width="100" height="100"> <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/privacy.jpeg" width="100" height="100">
 
 
 People facing a big problem when visiting pyschological clinics and not easy to take this step fairing from privacy besides corona virus effects in our life , so CALMA help people communicate with doctors in complete
@@ -25,7 +24,7 @@ In our application we will make it easier by providing pyschological support for
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/doctors.jpeg" width="100" height="100">
 
 ### 3- Users can sign up to chat with doctors
-<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/signup.jpeg" width="100" height="100">
+<img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/sign_up.jpeg" width="100" height="100">
 
 ### 4- Chat with doctors and patients in complete privacy
 <img src="https://github.com/esraa-abd-el-qader/Calma/blob/master/assets/chats.jpeg" width="100" height="100">
