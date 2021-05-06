@@ -9,17 +9,14 @@ import DoctorSection from "./Doctors-section/DoctorsHome";
 import BlogsHome from "./Blogs.js/BlogsHome";
 import HappyClient from "./HappyClientSection/HappyClient";
 import CentersHome from "./CentersHome/Centers";
-<<<<<<< HEAD
 import Messenger from "../Dashboard/Messenger";
 import { Link } from "react-router-dom";
 import {NavLink} from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import {withRouter} from 'react-router-dom';
 
-=======
 
 import MessengerHome from "./Messenger Home/Messenger";
->>>>>>> 65e6cf95531a7522c3e92b037f96b75855af2888
 
 function Home(props) {
 

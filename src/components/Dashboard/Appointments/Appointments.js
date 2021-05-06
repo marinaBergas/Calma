@@ -75,7 +75,7 @@ export const Appointments = () => {
                               dispatch(Disapprove(item));
                             }}
                           >
-                            Disapprove
+                            Decline
                           </button>
                           <button
                             className="btn btn_appoint btn-success w-50"

@@ -69,7 +69,7 @@ export default function Patients() {
                               dispatch(Disapprove(item));
                             }}
                           >
-                            Remove Patient
+                            Remove 
                           </button>
                         </div>
                       </div>

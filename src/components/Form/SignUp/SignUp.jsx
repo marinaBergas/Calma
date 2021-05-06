@@ -140,6 +140,44 @@ const SignUp = () => {
               <h3 className="mt-5">Sign Up As</h3>
               <ButtonGroup className="mb-4">
                 <Button
+                 className={
+                  rSelected === 1
+                    ? "btn-dark bg-primary rounded-circle border  mx-3 "
+                    : "btn btn-light bg-light rounded-circle border mx-3 "
+                }
+                  onClick={() => setRSelected(1)}
+                  active={rSelected === 1}
+                >
+                  <FaUserAlt
+                   className={
+                    rSelected === 1 ? "text-white h2" : "text-primary h2"
+                  }
+                  />
+                  <p className={
+                    rSelected === 1 ? "text-white h6" : "text-primary h6"
+                  }>Visitor</p>
+                </Button>
+                <Button
+                  className={
+                    rSelected === 2
+                      ? "btn-dark bg-primary rounded-circle border  mx-3 "
+                      : "btn btn-light bg-light rounded-circle border mx-3 "
+                  }
+                  onClick={() => setRSelected(2)}
+                  active={rSelected === 2}
+                >
+                  <FaUserMd
+                    className={
+                      rSelected === 2 ? "text-white h2" : "text-primary h2"
+                    }
+                  />
+                  <p className={
+                    rSelected === 2 ? "text-white h6" : "text-primary h6"
+                  }> Doctor</p>
+                </Button>
+              </ButtonGroup>
+              {/* <ButtonGroup className="mb-4">
+                <Button
                   className={
                     rSelected === 1
                       ? "btn btn-dark rounded-circle border border-dark mx-3 btn_signup"
@@ -171,7 +209,7 @@ const SignUp = () => {
                   />
                   <p className="fw-bolder"> Doctor</p>
                 </Button>
-              </ButtonGroup>
+              </ButtonGroup> */}
               <FormGroup className="text-left">
                 <Label for="name">Name*</Label>
                 <Input
